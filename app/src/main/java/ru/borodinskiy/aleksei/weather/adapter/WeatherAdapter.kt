@@ -5,11 +5,11 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
-import ru.borodinskiy.aleksei.weather.R
 import ru.borodinskiy.aleksei.weather.databinding.CardWeatherBinding
 import ru.borodinskiy.aleksei.weather.dto.Weather
+import ru.borodinskiy.aleksei.weather.util.load
 
-class WeatherAdapter() :
+class WeatherAdapter :
     ListAdapter<Weather, WeatherAdapter.CarViewHolder>(DiffCallback) {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): CarViewHolder {
@@ -29,22 +29,14 @@ class WeatherAdapter() :
         fun bind(weather: Weather) {
 
             binding.apply {
-                when (weather.condition) {
-                    "?" -> {
-                        conditionIcon.setImageResource(R.drawable.ic_rain_24)
-                    }
-
-                    "?" -> {
-                        conditionIcon.setImageResource(R.drawable.ic_snow_24)
-                    }
-
-                    "?" -> {
-                        conditionIcon.setImageResource(R.drawable.ic_cloudy_24)
-                    }
-
-                    else -> conditionIcon.setImageResource(R.drawable.ic_sun_24)
+                day.text = weather.day
+                conditionText.text = weather.condition
+                temp.text = weather.temperature.toString()
+                wind.text = weather.wind.toString()
+                humidity.text = weather.humidity.toString()
+                weather.icon.let {
+                    conditionIcon.load(it)
                 }
-
             }
         }
     }
