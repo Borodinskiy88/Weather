@@ -7,6 +7,6 @@ class WeatherRepositoryImpl @Inject constructor(
     private val apiService: ApiService
 ) : WeatherRepository {
 
-    override suspend fun getWeatherMoscow() = apiService.getWeather()
+    override suspend fun getWeatherMoscow() = apiService.getWeatherMoscow()
 
 }

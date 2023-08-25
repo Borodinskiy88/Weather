@@ -16,7 +16,8 @@ class WeatherViewModel @Inject constructor(
     private val repository: WeatherRepositoryImpl
 ) : ViewModel() {
 
-    val data: MutableLiveData<Weather> = MutableLiveData()
+    val dataWeather = MutableLiveData<Weather>()
+    val dataWeatherList = MutableLiveData<List<Weather>>()
 
     fun loadWeather() {
         viewModelScope.launch {
@@ -24,10 +25,10 @@ class WeatherViewModel @Inject constructor(
         }
     }
 
-    fun getMoscow(): LiveData<List<Weather>> {
+    fun getWeatherMoscow(): LiveData<List<Weather>> {
         return liveData {
             val data = repository.getWeatherMoscow()
-            data.body()?.let { emit(it) }
+            data.body()?.let { emit(listOf(it)) }
         }
     }
 

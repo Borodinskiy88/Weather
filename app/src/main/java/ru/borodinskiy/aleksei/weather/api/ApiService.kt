@@ -9,11 +9,11 @@ import ru.borodinskiy.aleksei.weather.dto.Weather
 interface ApiService {
 
     @GET("forecast.json")
-    suspend fun getWeather(
+    suspend fun getWeatherMoscow(
         @Query("key") key: String = API_KEY,
         @Query("days") days: Int = 5,
         @Query("q") q: String = "Moscow",
         @Query("lang") lang: String = "RU"
-    ): Response<List<Weather>>
+    ): Response<Weather>
 
 }

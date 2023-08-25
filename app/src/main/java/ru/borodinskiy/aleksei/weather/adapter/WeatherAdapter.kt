@@ -10,20 +10,20 @@ import ru.borodinskiy.aleksei.weather.dto.Weather
 import ru.borodinskiy.aleksei.weather.util.load
 
 class WeatherAdapter :
-    ListAdapter<Weather, WeatherAdapter.CarViewHolder>(DiffCallback) {
+    ListAdapter<Weather, WeatherAdapter.WeatherViewHolder>(DiffCallback) {
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): CarViewHolder {
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): WeatherViewHolder {
 
-        return CarViewHolder(
+        return WeatherViewHolder(
             CardWeatherBinding.inflate(LayoutInflater.from(parent.context), parent, false)
         )
     }
 
-    override fun onBindViewHolder(holder: CarViewHolder, position: Int) {
+    override fun onBindViewHolder(holder: WeatherViewHolder, position: Int) {
         getItem(position)?.let { holder.bind(it) }
     }
 
-    class CarViewHolder(
+    class WeatherViewHolder(
         private val binding: CardWeatherBinding,
     ) : RecyclerView.ViewHolder(binding.root) {
         fun bind(weather: Weather) {
@@ -31,9 +31,9 @@ class WeatherAdapter :
             binding.apply {
                 day.text = weather.day
                 conditionText.text = weather.condition
-                temp.text = weather.temperature.toString()
-                wind.text = weather.wind.toString()
-                humidity.text = weather.humidity.toString()
+                temp.text = weather.temperature
+                wind.text = weather.wind
+                humidity.text = weather.humidity
                 weather.icon.let {
                     conditionIcon.load(it)
                 }
@@ -44,7 +44,7 @@ class WeatherAdapter :
     companion object {
         private val DiffCallback = object : DiffUtil.ItemCallback<Weather>() {
             override fun areItemsTheSame(oldItem: Weather, newItem: Weather): Boolean {
-                return oldItem.id == newItem.id
+                return oldItem == newItem
             }
 
             override fun areContentsTheSame(oldItem: Weather, newItem: Weather): Boolean {

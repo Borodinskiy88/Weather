@@ -5,6 +5,6 @@ import ru.borodinskiy.aleksei.weather.dto.Weather
 
 interface WeatherRepository {
 
-    suspend fun getWeatherMoscow(): Response<List<Weather>>
+    suspend fun getWeatherMoscow(): Response<Weather>
 
 }
