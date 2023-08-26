@@ -1,5 +1,6 @@
 package ru.borodinskiy.aleksei.weather.adapter
 
+import android.annotation.SuppressLint
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
@@ -27,17 +28,17 @@ class WeatherAdapter :
     class WeatherViewHolder(
         private val binding: CardWeatherBinding,
     ) : RecyclerView.ViewHolder(binding.root) {
+        @SuppressLint("SetTextI18n")
         fun bind(weather: Weather) {
 
             binding.apply {
-                day.text = weather.day
-                conditionText.text = weather.condition
-                temp.text = weather.temperature
-                wind.text = weather.wind
-                humidity.text = weather.humidity
-                weather.icon.let {
-                    conditionIcon.load(it)
-                }
+
+                day.text = weather.forecast.forecastDay[0].date
+                conditionText.text = weather.forecast.forecastDay[0].day.condition.condition
+                temp.text = weather.forecast.forecastDay[0].day.temperature + " °C"
+                wind.text = weather.forecast.forecastDay[0].day.wind + " км/ч"
+                humidity.text = weather.forecast.forecastDay[0].day.humidity + " %"
+                conditionIcon.load(weather.forecast.forecastDay[0].day.condition.icon)
             }
         }
     }
