@@ -20,7 +20,8 @@ class WeatherAdapter :
     }
 
     override fun onBindViewHolder(holder: WeatherViewHolder, position: Int) {
-        getItem(position)?.let { holder.bind(it) }
+//        getItem(position)?.let { holder.bind(it) }
+        holder.bind(getItem(position))
     }
 
     class WeatherViewHolder(
