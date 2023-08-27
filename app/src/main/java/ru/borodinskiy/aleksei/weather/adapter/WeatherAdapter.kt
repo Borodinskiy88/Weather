@@ -39,6 +39,13 @@ class WeatherAdapter :
                 wind.text = weather.forecast.forecastDay[0].day.wind + " км/ч"
                 humidity.text = weather.forecast.forecastDay[0].day.humidity + " %"
                 conditionIcon.load(weather.forecast.forecastDay[0].day.condition.icon)
+
+//                day.text = weather.forecast.forecastDay[layoutPosition].date
+//                conditionText.text = weather.forecast.forecastDay[layoutPosition].day.condition.condition
+//                temp.text = weather.forecast.forecastDay[layoutPosition].day.temperature + " °C"
+//                wind.text = weather.forecast.forecastDay[layoutPosition].day.wind + " км/ч"
+//                humidity.text = weather.forecast.forecastDay[layoutPosition].day.humidity + " %"
+//                conditionIcon.load(weather.forecast.forecastDay[layoutPosition].day.condition.icon)
             }
         }
     }

@@ -24,28 +24,35 @@
             android:textColor="@color/black"
             android:textSize="24sp"
             android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
+
         <ImageView
             android:id="@+id/condition_icon"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="@dimen/icon_button_min_size_48"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:layout_marginStart="100dp"
+            android:layout_marginTop="@dimen/padding_start_8"
             android:src="@drawable/ic_sun_24"
-            app:layout_constraintBottom_toBottomOf="@id/temp"
-            app:layout_constraintStart_toEndOf="@id/temp"
-            app:layout_constraintTop_toTopOf="@id/temp" />
+            app:layout_constraintEnd_toStartOf="@id/condition_text"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/day" />
 
         <TextView
             android:id="@+id/condition_text"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="@dimen/padding_start_8"
-            android:text="Солнечно"
-            android:textSize="20sp"
+            android:layout_marginEnd="120dp"
+            android:ellipsize="end"
+            android:singleLine="true"
+            android:text="Переменная облачность"
+            android:textSize="24sp"
             android:textStyle="bold"
             app:layout_constraintBottom_toBottomOf="@id/condition_icon"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@id/condition_icon"
             app:layout_constraintTop_toTopOf="@id/condition_icon" />
 
@@ -53,42 +60,47 @@
             android:id="@+id/temp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/padding_start_8"
-            android:drawablePadding="@dimen/padding_start_8"
+            android:layout_marginTop="@dimen/padding_12"
+            android:drawablePadding="@dimen/padding_start_4"
             android:text="+23 C"
             android:textSize="20sp"
-            android:textStyle="bold"
+            android:textStyle="italic"
             app:drawableStartCompat="@drawable/ic_thermometer_24"
             app:drawableTint="@color/gray"
-            app:layout_constraintStart_toStartOf="@id/day"
-            app:layout_constraintTop_toBottomOf="@id/day" />
+            app:layout_constraintEnd_toStartOf="@id/wind"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/condition_icon" />
 
         <TextView
             android:id="@+id/wind"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/padding_start_8"
-            android:drawablePadding="@dimen/padding_start_8"
+            android:layout_marginStart="@dimen/padding_start_8"
+            android:layout_marginTop="@dimen/padding_12"
+            android:drawablePadding="@dimen/padding_start_4"
             android:text="34 м/с"
             android:textSize="20sp"
-            android:textStyle="bold"
-            app:drawableStartCompat="@drawable/ic_wind_24"
+            android:textStyle="italic"
+            app:drawableStartCompat="@drawable/ic_wind_black_24"
             app:drawableTint="@color/gray"
-            app:layout_constraintStart_toStartOf="@id/temp"
-            app:layout_constraintTop_toBottomOf="@id/temp" />
+            app:layout_constraintEnd_toStartOf="@id/humidity"
+            app:layout_constraintStart_toEndOf="@id/temp"
+            app:layout_constraintTop_toBottomOf="@id/condition_icon" />
 
         <TextView
             android:id="@+id/humidity"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:drawablePadding="@dimen/padding_start_8"
+            android:layout_marginStart="@dimen/padding_start_8"
+            android:drawablePadding="@dimen/padding_start_4"
             android:text="56%"
             android:textSize="20sp"
-            android:textStyle="bold"
+            android:textStyle="italic"
             app:drawableStartCompat="@drawable/ic_drop_24"
             app:drawableTint="@color/gray"
             app:layout_constraintBottom_toBottomOf="@id/wind"
-            app:layout_constraintStart_toStartOf="@id/condition_icon"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/wind"
             app:layout_constraintTop_toTopOf="@id/wind" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
