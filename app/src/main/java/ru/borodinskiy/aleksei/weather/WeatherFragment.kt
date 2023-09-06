@@ -4,7 +4,6 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -12,6 +11,12 @@ import androidx.recyclerview.widget.RecyclerView
 import dagger.hilt.android.AndroidEntryPoint
 import ru.borodinskiy.aleksei.weather.adapter.WeatherAdapter
 import ru.borodinskiy.aleksei.weather.databinding.FragmentWeatherBinding
+import ru.borodinskiy.aleksei.weather.dto.Condition
+import ru.borodinskiy.aleksei.weather.dto.Day
+import ru.borodinskiy.aleksei.weather.dto.Forecast
+import ru.borodinskiy.aleksei.weather.dto.ForecastDay
+import ru.borodinskiy.aleksei.weather.dto.Location
+import ru.borodinskiy.aleksei.weather.dto.Weather
 import ru.borodinskiy.aleksei.weather.viewmodel.WeatherViewModel
 
 @AndroidEntryPoint
@@ -40,21 +45,49 @@ class WeatherFragment : Fragment() {
 
         recyclerView.adapter = adapter
 
-//        val list = listOf(
-//            Weather(
-//                Location("T", "T"),
-//                Forecast(
-//                    forecastDay = listOf(
-//                        ForecastDay(
-//                            Day(
-//                                "24", "36", "45",
-//                                Condition("", "freeze")
-//                            ),
-//                            "06.09.2023"
-//                        )
-//                    )
-//                )
-//            ),
+        val list = listOf(
+            Weather(
+                Location("T", "T"),
+                Forecast(
+                    forecastDay = listOf(
+                        ForecastDay(
+                            Day(
+                                "24", "36", "45",
+                                Condition("", "freeze")
+                            ),
+                            "06.09.2023"
+                        ),
+                        ForecastDay(
+                            Day(
+                                "24", "36", "45",
+                                Condition("", "freeze")
+                            ),
+                            "07.09.2023"
+                        ),
+                        ForecastDay(
+                            Day(
+                                "24", "36", "45",
+                                Condition("", "freeze")
+                            ),
+                            "08.09.2023"
+                        ),
+                        ForecastDay(
+                            Day(
+                                "24", "36", "45",
+                                Condition("", "freeze")
+                            ),
+                            "09.09.2023"
+                        ),
+                        ForecastDay(
+                            Day(
+                                "24", "36", "45",
+                                Condition("", "freeze")
+                            ),
+                            "10.09.2023"
+                        ),
+                    )
+                )
+            ),
 //            Weather(
 //                Location("T", "T"),
 //                Forecast(
@@ -114,23 +147,23 @@ class WeatherFragment : Fragment() {
 //                    )
 //                )
 //            ),
-//        )
-//        adapter.submitList(list)
+        )
+        adapter.submitList(list)
 
 //        viewModel.data.observe(viewLifecycleOwner) {
 //            adapter.submitList(it)
 //        }
 
-        binding.weatherButton.setOnClickListener {
-            //           Поменять фон
-            binding.headline.text = "Москва"
-//            binding.headline.text = viewModel.data.value?.get(0)?.location?.city
-            this.view?.background = ContextCompat.getDrawable(requireContext(), R.drawable.moscow)
-            viewModel.getWeatherMoscow().observe(viewLifecycleOwner) {
-
-                adapter.submitList(it)
-            }
-        }
+//        binding.weatherButton.setOnClickListener {
+//            //           Поменять фон
+//            binding.headline.text = "Москва"
+////            binding.headline.text = viewModel.data.value?.get(0)?.location?.city
+//            this.view?.background = ContextCompat.getDrawable(requireContext(), R.drawable.moscow)
+//            viewModel.getWeatherMoscow().observe(viewLifecycleOwner) {
+//
+//                adapter.submitList(it)
+//            }
+//        }
 
 
 //        binding.refreshWeatherButton.setOnClickListener {
