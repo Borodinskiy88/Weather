@@ -42,12 +42,77 @@ class WeatherFragment : Fragment() {
 
 //        val list = listOf(
 //            Weather(
-//                "Тула", "Россия", "26.08.2023", "//cdn.weatherapi.com/weather/64x64/day/116.png",
-//                "Облачно", "+17", "28 км/ч", "65%"
+//                Location("T", "T"),
+//                Forecast(
+//                    forecastDay = listOf(
+//                        ForecastDay(
+//                            Day(
+//                                "24", "36", "45",
+//                                Condition("", "freeze")
+//                            ),
+//                            "06.09.2023"
+//                        )
+//                    )
+//                )
 //            ),
 //            Weather(
-//                "Тула", "Россия", "27.08.2023", "//cdn.weatherapi.com/weather/64x64/day/113.png",
-//                "Дождь", "+27", "48 км/ч", "65%"
+//                Location("T", "T"),
+//                Forecast(
+//                    forecastDay = listOf(
+//                        ForecastDay(
+//                            Day(
+//                                "24", "36", "45",
+//                                Condition("", "freeze")
+//                            ),
+//                            "07.09.2023"
+//                        )
+//                    )
+//                )
+//            ),
+//
+//            Weather(
+//                Location("T", "T"),
+//                Forecast(
+//                    forecastDay = listOf(
+//                        ForecastDay(
+//                            Day(
+//                                "24", "36", "45",
+//                                Condition("", "freeze")
+//                            ),
+//                            "08.09.2023"
+//                        )
+//                    )
+//                )
+//            ),
+//
+//            Weather(
+//                Location("T", "T"),
+//                Forecast(
+//                    forecastDay = listOf(
+//                        ForecastDay(
+//                            Day(
+//                                "24", "36", "45",
+//                                Condition("", "freeze")
+//                            ),
+//                            "09.09.2023"
+//                        )
+//                    )
+//                )
+//            ),
+//
+//            Weather(
+//                Location("T", "T"),
+//                Forecast(
+//                    forecastDay = listOf(
+//                        ForecastDay(
+//                            Day(
+//                                "24", "36", "45",
+//                                Condition("", "freeze")
+//                            ),
+//                            "10.09.2023"
+//                        )
+//                    )
+//                )
 //            ),
 //        )
 //        adapter.submitList(list)
