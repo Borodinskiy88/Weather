@@ -1,12 +1,11 @@
 package ru.borodinskiy.aleksei.weather.viewmodel
 
+import android.util.Log
 import androidx.lifecycle.LiveData
-import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import androidx.lifecycle.liveData
-import androidx.lifecycle.viewModelScope
+import androidx.lifecycle.asLiveData
 import dagger.hilt.android.lifecycle.HiltViewModel
-import kotlinx.coroutines.launch
+import kotlinx.coroutines.flow.catch
 import ru.borodinskiy.aleksei.weather.dto.Weather
 import ru.borodinskiy.aleksei.weather.repository.WeatherRepositoryImpl
 import javax.inject.Inject
@@ -16,22 +15,9 @@ class WeatherViewModel @Inject constructor(
     private val repository: WeatherRepositoryImpl
 ) : ViewModel() {
 
-    val dataWeather = MutableLiveData<Weather>()
-    val dataWeatherList = MutableLiveData<List<Weather>>()
+    var getWeather: LiveData<Weather> = repository.getWeatherMoscow()
+        .catch { exception -> Log.d("asd", "Exception ${exception.message}") }
+        .asLiveData()
 
-    val data = getWeatherMoscow()
-
-    fun loadWeather() {
-        viewModelScope.launch {
-            repository.getWeatherMoscow()
-        }
-    }
-
-    fun getWeatherMoscow(): LiveData<List<Weather>> {
-        return liveData {
-            val data = repository.getWeatherMoscow()
-            data.body()?.let { emit(listOf(it)) }
-        }
-    }
 
 }

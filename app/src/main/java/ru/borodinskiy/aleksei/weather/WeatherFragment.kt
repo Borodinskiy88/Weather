@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -22,7 +23,8 @@ import ru.borodinskiy.aleksei.weather.viewmodel.WeatherViewModel
 @AndroidEntryPoint
 class WeatherFragment : Fragment() {
     private lateinit var recyclerView: RecyclerView
-    private lateinit var adapter: WeatherAdapter
+
+    //    private lateinit var adapter: WeatherAdapter
     private val viewModel: WeatherViewModel by activityViewModels()
     private lateinit var binding: FragmentWeatherBinding
 
@@ -41,9 +43,9 @@ class WeatherFragment : Fragment() {
         recyclerView = binding.recyclerView
         recyclerView.layoutManager = LinearLayoutManager(requireContext())
 
-        adapter = WeatherAdapter()
+//        adapter = WeatherAdapter()
 
-        recyclerView.adapter = adapter
+//        recyclerView.adapter = adapter
 
         val list = listOf(
             Weather(
@@ -148,27 +150,36 @@ class WeatherFragment : Fragment() {
 //                )
 //            ),
         )
-        adapter.submitList(list)
+//        adapter.submitList(list)
 
 //        viewModel.data.observe(viewLifecycleOwner) {
 //            adapter.submitList(it)
 //        }
 
-//        binding.weatherButton.setOnClickListener {
-//            //           Поменять фон
-//            binding.headline.text = "Москва"
-////            binding.headline.text = viewModel.data.value?.get(0)?.location?.city
-//            this.view?.background = ContextCompat.getDrawable(requireContext(), R.drawable.moscow)
+        //TODO тестовые данные работают только если в адаптере заменить weather: Weather на forecastDay: ForecastDay
+
+        binding.weatherButton.setOnClickListener {
+            //           Поменять фон
+            binding.headline.text = "Москва"
+//            binding.headline.text = viewModel.data.value?.get(0)?.location?.city
+            this.view?.background = ContextCompat.getDrawable(requireContext(), R.drawable.moscow)
 //            viewModel.getWeatherMoscow().observe(viewLifecycleOwner) {
 //
 //                adapter.submitList(it)
 //            }
-//        }
+            viewModel.getWeather.observe(viewLifecycleOwner) {
+                setAdapterInRecycleView(it.forecast.forecastDay)
+            }
+        }
 
 
 //        binding.refreshWeatherButton.setOnClickListener {
 //            viewModel.loadWeather()
 //        }
+    }
+
+    private fun setAdapterInRecycleView(forecastDay: List<ForecastDay>) {
+        binding.recyclerView.adapter = WeatherAdapter(forecastDay)
     }
 
 }

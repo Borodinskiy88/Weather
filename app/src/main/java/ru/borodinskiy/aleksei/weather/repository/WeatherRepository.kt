@@ -1,10 +1,12 @@
 package ru.borodinskiy.aleksei.weather.repository
 
-import retrofit2.Response
+import ru.borodinskiy.aleksei.weather.api.ApiService
 import ru.borodinskiy.aleksei.weather.dto.Weather
+import javax.inject.Inject
 
-interface WeatherRepository {
+class WeatherRepository
+@Inject constructor(private val apiServices: ApiService) {
 
-    suspend fun getWeatherMoscow(): Response<Weather>
+    suspend fun getWeatherMoscow(): Weather = apiServices.getWeatherMoscow()
 
 }
