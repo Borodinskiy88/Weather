@@ -2,41 +2,66 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:background="@drawable/weather"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="@drawable/weather">
 
     <TextView
         android:id="@+id/headline"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/common_spacing_16"
-        android:text="Погода в Москве"
+        android:text="Санкт-Петербург"
         android:textColor="@color/white"
-        android:textSize="34sp"
+        android:textSize="46sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+    <TextView
+        android:id="@+id/head_temp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/padding_12"
+        android:text="+23 С"
+        android:textColor="@color/white"
+        android:textSize="76sp"
+        android:layout_marginStart="20dp"
+        app:layout_constraintEnd_toStartOf="@id/head_icon"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/headline" />
+
+    <ImageView
+        android:id="@+id/head_icon"
+        android:layout_width="76dp"
+        android:layout_height="76dp"
+        android:layout_marginEnd="20dp"
+        android:src="@drawable/ic_sun_24"
+        app:layout_constraintBottom_toBottomOf="@id/head_temp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/head_temp"
+        app:layout_constraintTop_toTopOf="@id/head_temp" />
+
     <Button
         android:id="@+id/weather_button"
-        app:layout_constraintTop_toBottomOf="@id/headline"
-        android:layout_marginTop="@dimen/common_spacing_16"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:backgroundTint="?attr/colorPrimary"
-        android:textColor="@color/black"
-        android:text="Узнать погоду"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/common_spacing_16"
+        android:backgroundTint="?attr/colorPrimary"
+        android:text="Выбрать город"
+        android:textSize="20sp"
+        android:textColor="@color/black"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/head_temp" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerView"
         android:layout_width="match_parent"
         android:layout_height="0dp"
+        android:layout_marginTop="56dp"
         android:scrollbars="vertical"
-        android:layout_marginTop="@dimen/common_spacing_16"
         app:layout_constraintTop_toBottomOf="@id/weather_button"
         tools:listitem="@layout/card_weather" />
 

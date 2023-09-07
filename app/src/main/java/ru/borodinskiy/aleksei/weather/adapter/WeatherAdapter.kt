@@ -8,6 +8,8 @@ import androidx.recyclerview.widget.RecyclerView
 import ru.borodinskiy.aleksei.weather.databinding.CardWeatherBinding
 import ru.borodinskiy.aleksei.weather.dto.ForecastDay
 import ru.borodinskiy.aleksei.weather.util.load
+import java.text.SimpleDateFormat
+import java.util.Locale
 
 class WeatherAdapter(private val forecastDay: List<ForecastDay>) :
     RecyclerView.Adapter<WeatherAdapter.WeatherViewHolder>() {
@@ -15,14 +17,24 @@ class WeatherAdapter(private val forecastDay: List<ForecastDay>) :
 
     inner class WeatherViewHolder(private val binding: CardWeatherBinding) :
         RecyclerView.ViewHolder(binding.root) {
-        @SuppressLint("SetTextI18n")
+        @SuppressLint("SetTextI18n", "SimpleDateFormat")
         fun bind(forecastDay: ForecastDay) {
-            with(binding) {
-                day.text = forecastDay.date
+            binding.apply {
+
+
+//                val formatter = DateTimeFormatter.ofPattern("dd-MM")
+//                val date = LocalDate.parse(forecastDay.date)
+//                val new = date.format(formatter)
+
+                val dateString = forecastDay.date
+                val dateObj = SimpleDateFormat("yyyy-MM-dd").parse(dateString)
+                val date = dateObj?.let { SimpleDateFormat("d  MMMM", Locale("ru")).format(it) }
+
+                day.text = date
                 conditionText.text = forecastDay.day.condition.condition
-                temp.text = forecastDay.day.temperature + " °C"
-                wind.text = forecastDay.day.wind + " км/ч"
-                humidity.text = forecastDay.day.humidity + " %"
+                temp.text = forecastDay.day.temperature.toInt().toString() + " °C"
+                wind.text = forecastDay.day.wind.toInt().toString() + " км/ч"
+                humidity.text = forecastDay.day.humidity.toInt().toString() + " %"
                 conditionIcon.load(forecastDay.day.condition.icon)
             }
         }

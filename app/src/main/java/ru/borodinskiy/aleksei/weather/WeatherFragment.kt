@@ -1,5 +1,6 @@
 package ru.borodinskiy.aleksei.weather
 
+import android.annotation.SuppressLint
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -12,19 +13,13 @@ import androidx.recyclerview.widget.RecyclerView
 import dagger.hilt.android.AndroidEntryPoint
 import ru.borodinskiy.aleksei.weather.adapter.WeatherAdapter
 import ru.borodinskiy.aleksei.weather.databinding.FragmentWeatherBinding
-import ru.borodinskiy.aleksei.weather.dto.Condition
-import ru.borodinskiy.aleksei.weather.dto.Day
-import ru.borodinskiy.aleksei.weather.dto.Forecast
 import ru.borodinskiy.aleksei.weather.dto.ForecastDay
-import ru.borodinskiy.aleksei.weather.dto.Location
-import ru.borodinskiy.aleksei.weather.dto.Weather
+import ru.borodinskiy.aleksei.weather.util.load
 import ru.borodinskiy.aleksei.weather.viewmodel.WeatherViewModel
 
 @AndroidEntryPoint
 class WeatherFragment : Fragment() {
     private lateinit var recyclerView: RecyclerView
-
-    //    private lateinit var adapter: WeatherAdapter
     private val viewModel: WeatherViewModel by activityViewModels()
     private lateinit var binding: FragmentWeatherBinding
 
@@ -37,145 +32,30 @@ class WeatherFragment : Fragment() {
         return binding.root
     }
 
+    @SuppressLint("SetTextI18n")
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
         recyclerView = binding.recyclerView
         recyclerView.layoutManager = LinearLayoutManager(requireContext())
 
-//        adapter = WeatherAdapter()
-
-//        recyclerView.adapter = adapter
-
-        val list = listOf(
-            Weather(
-                Location("T", "T"),
-                Forecast(
-                    forecastDay = listOf(
-                        ForecastDay(
-                            Day(
-                                "24", "36", "45",
-                                Condition("", "freeze")
-                            ),
-                            "06.09.2023"
-                        ),
-                        ForecastDay(
-                            Day(
-                                "24", "36", "45",
-                                Condition("", "freeze")
-                            ),
-                            "07.09.2023"
-                        ),
-                        ForecastDay(
-                            Day(
-                                "24", "36", "45",
-                                Condition("", "freeze")
-                            ),
-                            "08.09.2023"
-                        ),
-                        ForecastDay(
-                            Day(
-                                "24", "36", "45",
-                                Condition("", "freeze")
-                            ),
-                            "09.09.2023"
-                        ),
-                        ForecastDay(
-                            Day(
-                                "24", "36", "45",
-                                Condition("", "freeze")
-                            ),
-                            "10.09.2023"
-                        ),
-                    )
-                )
-            ),
-//            Weather(
-//                Location("T", "T"),
-//                Forecast(
-//                    forecastDay = listOf(
-//                        ForecastDay(
-//                            Day(
-//                                "24", "36", "45",
-//                                Condition("", "freeze")
-//                            ),
-//                            "07.09.2023"
-//                        )
-//                    )
-//                )
-//            ),
-//
-//            Weather(
-//                Location("T", "T"),
-//                Forecast(
-//                    forecastDay = listOf(
-//                        ForecastDay(
-//                            Day(
-//                                "24", "36", "45",
-//                                Condition("", "freeze")
-//                            ),
-//                            "08.09.2023"
-//                        )
-//                    )
-//                )
-//            ),
-//
-//            Weather(
-//                Location("T", "T"),
-//                Forecast(
-//                    forecastDay = listOf(
-//                        ForecastDay(
-//                            Day(
-//                                "24", "36", "45",
-//                                Condition("", "freeze")
-//                            ),
-//                            "09.09.2023"
-//                        )
-//                    )
-//                )
-//            ),
-//
-//            Weather(
-//                Location("T", "T"),
-//                Forecast(
-//                    forecastDay = listOf(
-//                        ForecastDay(
-//                            Day(
-//                                "24", "36", "45",
-//                                Condition("", "freeze")
-//                            ),
-//                            "10.09.2023"
-//                        )
-//                    )
-//                )
-//            ),
-        )
-//        adapter.submitList(list)
-
-//        viewModel.data.observe(viewLifecycleOwner) {
-//            adapter.submitList(it)
-//        }
-
-        //TODO тестовые данные работают только если в адаптере заменить weather: Weather на forecastDay: ForecastDay
 
         binding.weatherButton.setOnClickListener {
             //           Поменять фон
             binding.headline.text = "Москва"
 //            binding.headline.text = viewModel.data.value?.get(0)?.location?.city
             this.view?.background = ContextCompat.getDrawable(requireContext(), R.drawable.moscow)
-//            viewModel.getWeatherMoscow().observe(viewLifecycleOwner) {
-//
-//                adapter.submitList(it)
-//            }
+
             viewModel.getWeather.observe(viewLifecycleOwner) {
                 setAdapterInRecycleView(it.forecast.forecastDay)
+                val temp = it.forecast.forecastDay[0].day.temperature.toInt()
+                binding.headTemp.text = if (temp > 0) {
+                    "+$temp °C"
+                } else "$temp °C"
+                //          binding.headTemp.text = it.forecast.forecastDay[0].day.temperature.toInt().toString() + " °C"
+                binding.headIcon.load(it.forecast.forecastDay[0].day.condition.icon)
             }
         }
-
-
-//        binding.refreshWeatherButton.setOnClickListener {
-//            viewModel.loadWeather()
-//        }
     }
 
     private fun setAdapterInRecycleView(forecastDay: List<ForecastDay>) {

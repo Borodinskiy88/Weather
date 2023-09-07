@@ -8,11 +8,11 @@ import ru.borodinskiy.aleksei.weather.dto.Weather
 import javax.inject.Inject
 
 class WeatherRepositoryImpl @Inject constructor(
-    private val repository: WeatherRepository
+    private val apiServiceImpl: ApiServiceImpl
 ) {
 
     fun getWeatherMoscow(): Flow<Weather> = flow {
-        val response = repository.getWeatherMoscow()
+        val response = apiServiceImpl.getWeatherMoscow()
         emit(response)
     }.flowOn(Dispatchers.IO)
 

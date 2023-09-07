@@ -4,7 +4,7 @@ import ru.borodinskiy.aleksei.weather.api.ApiService
 import ru.borodinskiy.aleksei.weather.dto.Weather
 import javax.inject.Inject
 
-class WeatherRepository
+class ApiServiceImpl
 @Inject constructor(private val apiServices: ApiService) {
 
     suspend fun getWeatherMoscow(): Weather = apiServices.getWeatherMoscow()
