@@ -56,10 +56,50 @@ class WeatherFragment : Fragment() {
                 binding.headIcon.load(it.forecast.forecastDay[0].day.condition.icon)
             }
         }
+
+//        fun moscow() {
+//            binding.weatherButton.setOnClickListener {
+//                //           Поменять фон
+//                binding.headline.text = "Москва"
+////            binding.headline.text = viewModel.data.value?.get(0)?.location?.city
+//                this.view?.background =
+//                    ContextCompat.getDrawable(requireContext(), R.drawable.moscow)
+//
+//                viewModel.getWeather().observe(viewLifecycleOwner) {
+//                    setAdapterInRecycleView(it.forecast.forecastDay)
+//                    val temp = it.forecast.forecastDay[0].day.temperature.toInt()
+//                    binding.headTemp.text = if (temp > 0) {
+//                        "+$temp °C"
+//                    } else "$temp °C"
+//                    //          binding.headTemp.text = it.forecast.forecastDay[0].day.temperature.toInt().toString() + " °C"
+//                    binding.headIcon.load(it.forecast.forecastDay[0].day.condition.icon)
+//                }
+//            }
+//        }
     }
 
     private fun setAdapterInRecycleView(forecastDay: List<ForecastDay>) {
         binding.recyclerView.adapter = WeatherAdapter(forecastDay)
     }
+
+//    fun moscow() {
+//        binding.weatherButton.setOnClickListener {
+//            //           Поменять фон
+//            binding.headline.text = "Москва"
+////            binding.headline.text = viewModel.data.value?.get(0)?.location?.city
+//            this.view?.background =
+//                ContextCompat.getDrawable(requireContext(), R.drawable.moscow)
+//
+//            viewModel.getWeather().observe(viewLifecycleOwner) {
+//                setAdapterInRecycleView(it.forecast.forecastDay)
+//                val temp = it.forecast.forecastDay[0].day.temperature.toInt()
+//                binding.headTemp.text = if (temp > 0) {
+//                    "+$temp °C"
+//                } else "$temp °C"
+//                //          binding.headTemp.text = it.forecast.forecastDay[0].day.temperature.toInt().toString() + " °C"
+//                binding.headIcon.load(it.forecast.forecastDay[0].day.condition.icon)
+//            }
+//        }
+//    }
 
 }

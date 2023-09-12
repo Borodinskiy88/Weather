@@ -19,5 +19,9 @@ class WeatherViewModel @Inject constructor(
         .catch { exception -> Log.d("asd", "Exception ${exception.message}") }
         .asLiveData()
 
+//    fun getWeather(): LiveData<Weather> = repository.getWeatherMoscow()
+//        .catch { exception -> Log.d("asd", "Exception ${exception.message}") }
+//        .asLiveData()
+
 
 }
