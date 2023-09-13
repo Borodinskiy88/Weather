@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.core.content.ContextCompat
+import androidx.core.view.isVisible
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -41,6 +42,7 @@ class WeatherFragment : Fragment() {
         recyclerView.layoutManager = LinearLayoutManager(requireContext())
 
         callCity("Moscow", "Москва", R.drawable.moscow)
+        binding.weatherButton.isVisible = true
 
         binding.weatherButton.setOnClickListener {
             callCity("Saint Petersburg", "Санкт-Петербург", R.drawable.piter)
