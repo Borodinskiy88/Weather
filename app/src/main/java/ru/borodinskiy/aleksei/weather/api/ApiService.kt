@@ -11,7 +11,7 @@ interface ApiService {
     suspend fun getWeatherMoscow(
         @Query("key") key: String = API_KEY,
         @Query("days") days: Int = 5,
-        @Query("q") q: String = "Moscow",
+        @Query("q") q: String,
         @Query("lang") lang: String = "RU"
     ): Weather
 

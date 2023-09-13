@@ -11,8 +11,8 @@ class WeatherRepositoryImpl @Inject constructor(
     private val apiServiceImpl: ApiServiceImpl
 ) {
 
-    fun getWeatherMoscow(): Flow<Weather> = flow {
-        val response = apiServiceImpl.getWeatherMoscow()
+    fun getWeatherMoscow(city: String): Flow<Weather> = flow {
+        val response = apiServiceImpl.getWeatherMoscow(city = city)
         emit(response)
     }.flowOn(Dispatchers.IO)
 

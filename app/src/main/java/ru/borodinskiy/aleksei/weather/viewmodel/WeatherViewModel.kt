@@ -15,13 +15,13 @@ class WeatherViewModel @Inject constructor(
     private val repository: WeatherRepositoryImpl
 ) : ViewModel() {
 
-    var getWeather: LiveData<Weather> = repository.getWeatherMoscow()
-        .catch { exception -> Log.d("asd", "Exception ${exception.message}") }
-        .asLiveData()
-
-//    fun getWeather(): LiveData<Weather> = repository.getWeatherMoscow()
+//    var getWeather: LiveData<Weather> = repository.getWeatherMoscow()
 //        .catch { exception -> Log.d("asd", "Exception ${exception.message}") }
 //        .asLiveData()
+
+    fun getWeather(city: String): LiveData<Weather> = repository.getWeatherMoscow(city)
+        .catch { exception -> Log.d("asd", "Exception ${exception.message}") }
+        .asLiveData()
 
 
 }

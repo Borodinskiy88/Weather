@@ -30,9 +30,10 @@ class WeatherAdapter(private val forecastDay: List<ForecastDay>) :
                 val dateObj = SimpleDateFormat("yyyy-MM-dd").parse(dateString)
                 val date = dateObj?.let { SimpleDateFormat("d  MMMM", Locale("ru")).format(it) }
 
+                //Todo Температура выбрана максимальная, а не средняя
                 day.text = date
                 conditionText.text = forecastDay.day.condition.condition
-                temp.text = forecastDay.day.temperature.toInt().toString() + " °C"
+                temp.text = forecastDay.day.temperatureMax.toInt().toString() + " °C"
                 wind.text = forecastDay.day.wind.toInt().toString() + " км/ч"
                 humidity.text = forecastDay.day.humidity.toInt().toString() + " %"
                 conditionIcon.load(forecastDay.day.condition.icon)

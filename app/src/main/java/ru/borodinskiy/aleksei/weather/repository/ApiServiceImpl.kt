@@ -7,6 +7,6 @@ import javax.inject.Inject
 class ApiServiceImpl
 @Inject constructor(private val apiServices: ApiService) {
 
-    suspend fun getWeatherMoscow(): Weather = apiServices.getWeatherMoscow()
+    suspend fun getWeatherMoscow(city: String): Weather = apiServices.getWeatherMoscow(q = city)
 
 }

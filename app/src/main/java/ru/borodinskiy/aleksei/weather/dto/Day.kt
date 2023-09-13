@@ -5,6 +5,8 @@ import com.google.gson.annotations.SerializedName
 data class Day(
     @SerializedName("avgtemp_c")
     val temperature: Double,
+    @SerializedName("maxtemp_c")
+    val temperatureMax: Double,
     @SerializedName("maxwind_kph")
     val wind: Double,
     @SerializedName("avghumidity")
