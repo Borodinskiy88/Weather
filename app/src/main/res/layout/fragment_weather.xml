@@ -12,8 +12,9 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/common_spacing_16"
         android:textColor="@color/white"
-        android:textSize="46sp"
+        android:textSize="42sp"
         android:textStyle="bold"
+        android:text="Санкт-Петербург"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -24,7 +25,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/padding_12"
         android:textColor="@color/white"
-        android:textSize="76sp"
+        android:textSize="70sp"
         android:layout_marginStart="20dp"
         app:layout_constraintEnd_toStartOf="@id/head_icon"
         app:layout_constraintStart_toStartOf="parent"
@@ -44,11 +45,10 @@
         android:id="@+id/weather_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="36dp"
-        android:backgroundTint="?attr/colorPrimary"
+        android:layout_marginTop="@dimen/padding_12"
+        android:backgroundTint="@color/PRIMARY_50"
         android:text="Выбрать город"
         android:textSize="20sp"
-        android:visibility="invisible"
         android:textColor="@color/black"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -58,9 +58,14 @@
         android:id="@+id/recyclerView"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_marginTop="36dp"
+        android:layout_marginTop="@dimen/padding_12"
         android:scrollbars="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintTop_toBottomOf="@id/weather_button"
         tools:listitem="@layout/card_weather" />
+
+    <!--    <Button-->
+    <!--        android:layout_width="wrap_content"-->
+    <!--        android:layout_height="wrap_content"/>-->
 
 </androidx.constraintlayout.widget.ConstraintLayout>

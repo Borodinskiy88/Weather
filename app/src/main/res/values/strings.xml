@@ -2,4 +2,19 @@
     <string name="app_name">Weather</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="v_novgorod">Великий Новгород</string>
+    <string name="vladimir">Владимир</string>
+    <string name="moscow">Москва</string>
+    <string name="st_petersburg">Санкт-Петербург</string>
+    <string name="kazan">Казань</string>
+    <string name="kaliningrad">Калининград</string>
+    <string name="n_novgorod">Нижний Новгород</string>
+    <string name="penza">Пенза</string>
+    <string name="pereslavl_z">Переславль-Залесский</string>
+    <string name="samara">Самара</string>
+    <string name="s_posad">Сергиев Посад</string>
+    <string name="suzdal">Суздаль</string>
+    <string name="tula">Тула</string>
+    <string name="cheboksary">Чебоксары</string>
+    <string name="yaroslavl">Ярославль</string>
 </resources>

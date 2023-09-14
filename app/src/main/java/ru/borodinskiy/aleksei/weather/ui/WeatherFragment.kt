@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.PopupMenu
 import androidx.core.content.ContextCompat
 import androidx.core.view.isVisible
 import androidx.fragment.app.Fragment
@@ -44,8 +45,112 @@ class WeatherFragment : Fragment() {
         callCity("Moscow", "Москва", R.drawable.moscow)
         binding.weatherButton.isVisible = true
 
+//        binding.weatherButton.setOnClickListener {
+//            //Прячем погоду
+//            recyclerView.isVisible = false
+//            callCity("Saint Petersburg", "Санкт-Петербург", R.drawable.piter)
+//        }
+
         binding.weatherButton.setOnClickListener {
-            callCity("Saint Petersburg", "Санкт-Петербург", R.drawable.piter)
+            recyclerView.isVisible = false
+            PopupMenu(it.context, it).apply {
+                inflate(R.menu.city_menu)
+                setOnMenuItemClickListener { item ->
+                    when (item.itemId) {
+                        R.id.moscow -> {
+                            callCity("Moscow", "Москва", R.drawable.moscow)
+                            recyclerView.isVisible = true
+                            true
+                        }
+
+                        R.id.st_petersburg -> {
+                            callCity("Saint Petersburg", "Санкт-Петербург", R.drawable.piter)
+                            recyclerView.isVisible = true
+                            true
+                        }
+
+                        R.id.v_novgorod -> {
+                            callCity("Veliky Novgorod", "В.Новгород", R.drawable.velikiy_novgorod)
+                            recyclerView.isVisible = true
+                            true
+                        }
+
+                        R.id.vladimir -> {
+                            callCity("Vladimir", "Владимир", R.drawable.vladimir)
+                            recyclerView.isVisible = true
+                            true
+                        }
+
+                        R.id.kazan -> {
+                            callCity("Kazan", "Казань", R.drawable.kazan)
+                            recyclerView.isVisible = true
+                            true
+                        }
+
+                        R.id.kaliningrad -> {
+                            callCity("Kaliningrad", "Калининград", R.drawable.kaliningrad)
+                            recyclerView.isVisible = true
+                            true
+                        }
+
+                        R.id.n_novgorod -> {
+                            callCity("Nizhny Novgorod", "Н.Новгород", R.drawable.nizny_novgorod)
+                            recyclerView.isVisible = true
+                            true
+                        }
+
+                        R.id.penza -> {
+                            callCity("Penza", "Пенза", R.drawable.penza)
+                            recyclerView.isVisible = true
+                            true
+                        }
+
+                        R.id.pereslavl_z -> {
+                            callCity("Pereslavl-Zalessky", "Переславль-З.", R.drawable.pereslavl)
+                            recyclerView.isVisible = true
+                            true
+                        }
+
+                        R.id.samara -> {
+                            callCity("Samara", "Самара", R.drawable.samara)
+                            recyclerView.isVisible = true
+                            true
+                        }
+
+                        R.id.s_posad -> {
+                            callCity("Sergiyev Posad", "Сергиев Посад", R.drawable.sergiev_posad)
+                            recyclerView.isVisible = true
+                            true
+                        }
+
+                        R.id.suzdal -> {
+                            callCity("Suzdal", "Суздаль", R.drawable.suzdal)
+                            recyclerView.isVisible = true
+                            true
+                        }
+
+                        R.id.tula -> {
+                            callCity("Tula", "Тула", R.drawable.tula)
+                            recyclerView.isVisible = true
+                            true
+                        }
+
+                        R.id.cheboksary -> {
+                            callCity("Cheboksary", "Чебоксары", R.drawable.cheboksary)
+                            recyclerView.isVisible = true
+                            true
+                        }
+
+                        R.id.yaroslavl -> {
+                            callCity("Yaroslavl", "Ярославль", R.drawable.yaroslavl)
+                            recyclerView.isVisible = true
+                            true
+                        }
+
+                        else -> false
+                    }
+                }
+            }.show()
         }
 
     }

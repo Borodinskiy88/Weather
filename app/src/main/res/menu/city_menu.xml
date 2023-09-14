@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/moscow"
+        android:title="@string/moscow" />
+    <item
+        android:id="@+id/st_petersburg"
+        android:title="@string/st_petersburg" />
+    <item
+        android:id="@+id/v_novgorod"
+        android:title="@string/v_novgorod" />
+    <item
+        android:id="@+id/vladimir"
+        android:title="@string/vladimir" />
+    <item
+        android:id="@+id/kazan"
+        android:title="@string/kazan" />
+    <item
+        android:id="@+id/kaliningrad"
+        android:title="@string/kaliningrad" />
+    <item
+        android:id="@+id/n_novgorod"
+        android:title="@string/n_novgorod" />
+    <item
+        android:id="@+id/penza"
+        android:title="@string/penza" />
+    <item
+        android:id="@+id/pereslavl_z"
+        android:title="@string/pereslavl_z" />
+    <item
+        android:id="@+id/samara"
+        android:title="@string/samara" />
+    <item
+        android:id="@+id/s_posad"
+        android:title="@string/s_posad" />
+    <item
+        android:id="@+id/suzdal"
+        android:title="@string/suzdal" />
+    <item
+        android:id="@+id/tula"
+        android:title="@string/tula" />
+    <item
+        android:id="@+id/cheboksary"
+        android:title="@string/cheboksary" />
+    <item
+        android:id="@+id/yaroslavl"
+        android:title="@string/yaroslavl" />
+</menu>
