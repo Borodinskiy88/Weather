@@ -41,15 +41,16 @@
         app:layout_constraintStart_toEndOf="@id/head_temp"
         app:layout_constraintTop_toTopOf="@id/head_temp" />
 
-    <Button
+    <com.google.android.material.button.MaterialButton
         android:id="@+id/weather_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/padding_12"
-        android:backgroundTint="@color/PRIMARY_50"
+        android:backgroundTint="@color/PRIMARY_500"
+        app:cornerRadius="@dimen/padding_12"
         android:text="Выбрать город"
-        android:textSize="20sp"
         android:textColor="@color/black"
+        android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/head_temp" />
@@ -64,8 +65,5 @@
         app:layout_constraintTop_toBottomOf="@id/weather_button"
         tools:listitem="@layout/card_weather" />
 
-    <!--    <Button-->
-    <!--        android:layout_width="wrap_content"-->
-    <!--        android:layout_height="wrap_content"/>-->
 
 </androidx.constraintlayout.widget.ConstraintLayout>

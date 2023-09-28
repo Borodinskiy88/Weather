@@ -9,5 +9,6 @@
     <color name="SECONDARY_400">#f186c0</color>
     <color name="SECONDARY_700">#ad1457</color>
     <color name="gray">#706F70</color>
+    <color name="PRIMARY_500">#66D9FFFE</color>
 </resources>
 

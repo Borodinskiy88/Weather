@@ -5,6 +5,7 @@
     android:layout_height="wrap_content"
     android:layout_margin="@dimen/padding_start_8"
     android:backgroundTint="@android:color/transparent"
+    app:cardCornerRadius="@dimen/fab_margin_24"
     app:cardElevation="0dp">
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -13,8 +14,7 @@
         android:background="@color/PRIMARY_50"
         android:paddingStart="@dimen/padding_start_8"
         android:paddingEnd="@dimen/padding_start_8"
-        android:paddingBottom="@dimen/padding_start_8"
-        app:cardCornerRadius="@dimen/fab_margin_24">
+        android:paddingBottom="@dimen/padding_start_8">
 
         <TextView
             android:id="@+id/day"
