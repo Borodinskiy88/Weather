@@ -11,11 +11,21 @@ import ru.borodinskiy.aleksei.weather.util.load
 import java.text.SimpleDateFormat
 import java.util.Locale
 
-class WeatherAdapter(private val forecastDay: List<ForecastDay>) :
+interface OnInteractionListener {
+    fun onShowDetail()
+}
+
+class WeatherAdapter(
+    private val forecastDay: List<ForecastDay>,
+    private val onInteractionListener: OnInteractionListener
+) :
     RecyclerView.Adapter<WeatherAdapter.WeatherViewHolder>() {
     private lateinit var _context: Context
 
-    inner class WeatherViewHolder(private val binding: CardWeatherBinding) :
+    inner class WeatherViewHolder(
+        private val binding: CardWeatherBinding,
+        private val onInteractionListener: OnInteractionListener
+    ) :
         RecyclerView.ViewHolder(binding.root) {
         @SuppressLint("SetTextI18n", "SimpleDateFormat")
         fun bind(forecastDay: ForecastDay) {
@@ -37,6 +47,10 @@ class WeatherAdapter(private val forecastDay: List<ForecastDay>) :
                 wind.text = forecastDay.day.wind.toInt().toString() + " км/ч"
                 humidity.text = forecastDay.day.humidity.toInt().toString() + " %"
                 conditionIcon.load(forecastDay.day.condition.icon)
+
+                cardWeather.setOnClickListener {
+                    onInteractionListener.onShowDetail()
+                }
             }
         }
     }
@@ -44,7 +58,7 @@ class WeatherAdapter(private val forecastDay: List<ForecastDay>) :
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): WeatherViewHolder {
         val binding = CardWeatherBinding.inflate(LayoutInflater.from(parent.context), parent, false)
         _context = parent.context
-        return WeatherViewHolder(binding)
+        return WeatherViewHolder(binding, onInteractionListener)
     }
 
     override fun getItemCount(): Int = forecastDay.size

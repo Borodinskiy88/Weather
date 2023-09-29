@@ -10,10 +10,12 @@ import androidx.core.content.ContextCompat
 import androidx.core.view.isVisible
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import dagger.hilt.android.AndroidEntryPoint
 import ru.borodinskiy.aleksei.weather.R
+import ru.borodinskiy.aleksei.weather.adapter.OnInteractionListener
 import ru.borodinskiy.aleksei.weather.adapter.WeatherAdapter
 import ru.borodinskiy.aleksei.weather.databinding.FragmentWeatherBinding
 import ru.borodinskiy.aleksei.weather.dto.ForecastDay
@@ -42,14 +44,10 @@ class WeatherFragment : Fragment() {
         recyclerView = binding.recyclerView
         recyclerView.layoutManager = LinearLayoutManager(requireContext())
 
+        //TODO Если бандл не пустой, открывай город из Бандла, если пустой, то Москву
+
         callCity("Moscow", "Москва", R.drawable.moscow)
         binding.weatherButton.isVisible = true
-
-//        binding.weatherButton.setOnClickListener {
-//            //Прячем погоду
-//            recyclerView.isVisible = false
-//            callCity("Saint Petersburg", "Санкт-Петербург", R.drawable.piter)
-//        }
 
         binding.weatherButton.setOnClickListener {
             recyclerView.isVisible = false
@@ -59,6 +57,7 @@ class WeatherFragment : Fragment() {
                     when (item.itemId) {
                         R.id.moscow -> {
                             callCity("Moscow", "Москва", R.drawable.moscow)
+                            //Прячем погоду
                             recyclerView.isVisible = true
                             true
                         }
@@ -165,7 +164,12 @@ class WeatherFragment : Fragment() {
     }
 
     private fun setAdapterInRecycleView(forecastDay: List<ForecastDay>) {
-        binding.recyclerView.adapter = WeatherAdapter(forecastDay)
+        binding.recyclerView.adapter = WeatherAdapter(forecastDay, object : OnInteractionListener {
+            override fun onShowDetail() {
+                findNavController().navigate(R.id.action_weatherFragment_to_dayFragment)
+            }
+
+        })
     }
 
     private fun observeCity(cityName: String) {
