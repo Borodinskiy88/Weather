@@ -7,6 +7,8 @@ data class Day(
     val temperature: Double,
     @SerializedName("maxtemp_c")
     val temperatureMax: Double,
+    @SerializedName("mintemp_c")
+    val temperatureMin: Double,
     @SerializedName("maxwind_kph")
     val wind: Double,
     @SerializedName("avghumidity")

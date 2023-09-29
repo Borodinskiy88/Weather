@@ -164,36 +164,26 @@ class WeatherFragment : Fragment() {
         observeCity(namEng)
     }
 
-//    private fun moscow() {
-//            //           Поменять фон
-//            binding.headline.text = "Москва"
-//            this.view?.background =
-//                ContextCompat.getDrawable(requireContext(), R.drawable.moscow)
-//
-//        observeCity("Moscow")
-//    }
-//
-//    private fun stPetersburg() {
-//        //           Поменять фон
-//        binding.headline.text = "Санкт-Петербург"
-//        this.view?.background =
-//            ContextCompat.getDrawable(requireContext(), R.drawable.piter)
-//
-//        observeCity("Saint Petersburg")
-//    }
-
     private fun setAdapterInRecycleView(forecastDay: List<ForecastDay>) {
         binding.recyclerView.adapter = WeatherAdapter(forecastDay)
     }
 
     private fun observeCity(cityName: String) {
         viewModel.getWeather(cityName).observe(viewLifecycleOwner) {
+
             setAdapterInRecycleView(it.forecast.forecastDay)
-            val temp = it.forecast.forecastDay[0].day.temperatureMax.toInt()
-            binding.headTemp.text = if (temp > 0) {
-                "+$temp °C"
-            } else "$temp °C"
-            binding.headIcon.load(it.forecast.forecastDay[0].day.condition.icon)
+
+            val currentTemp = it.current.tempCurrent.toInt()
+            binding.headTemp.text = if (currentTemp > 0) {
+                "+$currentTemp °C"
+            } else "$currentTemp °C"
+
+            binding.headIcon.load(it.current.condition.icon)
+//            val temp = it.forecast.forecastDay[0].day.temperatureMax.toInt()
+//            binding.headTemp.text = if (temp > 0) {
+//                "+$temp °C"
+//            } else "$temp °C"
+//            binding.headIcon.load(it.forecast.forecastDay[0].day.condition.icon)
         }
     }
 
