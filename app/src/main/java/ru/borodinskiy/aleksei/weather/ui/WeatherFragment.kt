@@ -16,7 +16,6 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import dagger.hilt.android.AndroidEntryPoint
 import ru.borodinskiy.aleksei.weather.R
-import ru.borodinskiy.aleksei.weather.adapter.OnInteractionListener
 import ru.borodinskiy.aleksei.weather.adapter.WeatherAdapter
 import ru.borodinskiy.aleksei.weather.databinding.FragmentWeatherBinding
 import ru.borodinskiy.aleksei.weather.dto.ForecastDay
@@ -176,15 +175,7 @@ class WeatherFragment : Fragment() {
     }
 
     private fun setAdapterInRecycleView(forecastDay: List<ForecastDay>) {
-        binding.recyclerView.adapter = WeatherAdapter(forecastDay, object : OnInteractionListener {
-            override fun onShowDetail() {
-                val bundle = bundleOf(
-                    // Pair("", forecastDay[0].day.)
-                )
-                findNavController().navigate(R.id.action_weatherFragment_to_dayFragment)
-            }
-
-        })
+        binding.recyclerView.adapter = WeatherAdapter(forecastDay)
     }
 
     private fun observeCity(cityName: String) {
@@ -198,11 +189,7 @@ class WeatherFragment : Fragment() {
             } else "$currentTemp °C"
 
             binding.headIcon.load(it.current.condition.icon)
-//            val temp = it.forecast.forecastDay[0].day.temperatureMax.toInt()
-//            binding.headTemp.text = if (temp > 0) {
-//                "+$temp °C"
-//            } else "$temp °C"
-//            binding.headIcon.load(it.forecast.forecastDay[0].day.condition.icon)
+
         }
     }
 

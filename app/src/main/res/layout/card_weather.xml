@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/card_weather"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
@@ -21,41 +22,39 @@
             android:id="@+id/day"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="18 августа"
+            tools:text="18 августа"
             android:textColor="@color/black"
-            android:textSize="24sp"
+            android:textSize="@dimen/text_size_24"
             android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
-
         <ImageView
             android:id="@+id/condition_icon"
-            android:layout_width="46dp"
-            android:layout_height="46dp"
-            android:layout_marginStart="100dp"
+            android:layout_width="@dimen/icon_button_min_size_48"
+            android:layout_height="@dimen/icon_button_min_size_48"
             android:layout_marginTop="@dimen/padding_start_8"
-            android:src="@drawable/ic_sun_24"
-            app:layout_constraintEnd_toStartOf="@id/condition_text"
+            tools:src="@drawable/ic_sun_24"
+            app:layout_constraintTop_toBottomOf="@id/day"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/day" />
+            app:layout_constraintEnd_toStartOf="@id/condition_text"
+            android:contentDescription="@string/icon" />
 
         <TextView
             android:id="@+id/condition_text"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="@dimen/padding_start_8"
-            android:layout_marginEnd="100dp"
             android:ellipsize="end"
             android:singleLine="true"
-            android:text="Переменная облачность"
-            android:textSize="22sp"
+            tools:text="Переменная облачность"
+            android:textSize="@dimen/text_size_22"
             android:textStyle="italic|bold"
-            app:layout_constraintBottom_toBottomOf="@id/condition_icon"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@id/condition_icon"
-            app:layout_constraintTop_toTopOf="@id/condition_icon" />
+            app:layout_constraintTop_toTopOf="@id/condition_icon"
+            app:layout_constraintBottom_toBottomOf="@id/condition_icon"
+            app:layout_constraintStart_toEndOf="@id/condition_icon" />
 
         <TextView
             android:id="@+id/temp"
@@ -63,8 +62,8 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/padding_12"
             android:drawablePadding="@dimen/padding_start_4"
-            android:text="+23 C"
-            android:textSize="22sp"
+            tools:text="+23 C"
+            android:textSize="@dimen/text_size_22"
             android:textStyle="italic|bold"
             app:drawableStartCompat="@drawable/ic_thermometer_24"
             app:drawableTint="@color/gray"
@@ -79,10 +78,9 @@
             android:layout_marginStart="@dimen/padding_start_8"
             android:layout_marginTop="@dimen/padding_12"
             android:drawablePadding="@dimen/padding_start_4"
-            android:text="34 м/с"
-            android:textSize="22sp"
+            tools:text="34 м/с"
+            android:textSize="@dimen/text_size_22"
             android:textStyle="italic|bold"
-
             app:drawableStartCompat="@drawable/ic_wind_black_24"
             app:drawableTint="@color/gray"
             app:layout_constraintEnd_toStartOf="@id/humidity"
@@ -95,8 +93,8 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="@dimen/padding_start_8"
             android:drawablePadding="@dimen/padding_start_4"
-            android:text="56%"
-            android:textSize="22sp"
+            tools:text="56%"
+            android:textSize="@dimen/text_size_22"
             android:textStyle="italic|bold"
             app:drawableStartCompat="@drawable/ic_drop_24"
             app:drawableTint="@color/gray"
