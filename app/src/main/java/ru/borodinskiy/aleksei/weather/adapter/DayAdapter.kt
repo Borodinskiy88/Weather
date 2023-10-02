@@ -8,8 +8,7 @@ import androidx.recyclerview.widget.RecyclerView
 import ru.borodinskiy.aleksei.weather.databinding.CardDayBinding
 import ru.borodinskiy.aleksei.weather.dto.Hour
 import ru.borodinskiy.aleksei.weather.util.load
-import java.text.SimpleDateFormat
-import java.util.Locale
+import ru.borodinskiy.aleksei.weather.utils.ReformatValues.reformatTime
 
 class DayAdapter(private val hour: List<Hour>) :
     RecyclerView.Adapter<DayAdapter.DayViewHolder>() {
@@ -26,15 +25,20 @@ class DayAdapter(private val hour: List<Hour>) :
 //                val date = LocalDate.parse(forecastDay.date)
 //                val new = date.format(formatter)
 
-                val timeString = hour.time
-                val timeObj = SimpleDateFormat("yyyy-MM-dd HH:mm").parse(timeString)
-                val currentTime =
-                    timeObj?.let { SimpleDateFormat("HH:mm", Locale("ru")).format(it) }
+//                val timeString = hour.time
+//                val timeObj = SimpleDateFormat("yyyy-MM-dd HH:mm").parse(timeString)
+//                val currentTime =
+//                    timeObj?.let { SimpleDateFormat("HH:mm", Locale("ru")).format(it) }
 
-                time.text = currentTime
+//                time.text = currentTime
+                time.text = reformatTime(hour.time)
                 iconWeather.load(hour.condition.icon)
-                temp.text = hour.tempHour.toInt().toString() + " °C"
-                conditionText.text = hour.condition.condition
+//                temp.text = hour.tempHour.toInt().toString() + " °C"
+
+                val currentTemp = hour.tempHour.toInt()
+                temp.text = if (currentTemp > 0) {
+                    "+$currentTemp °C"
+                } else "$currentTemp °C"
 
             }
         }

@@ -8,8 +8,7 @@ import androidx.recyclerview.widget.RecyclerView
 import ru.borodinskiy.aleksei.weather.databinding.CardWeatherBinding
 import ru.borodinskiy.aleksei.weather.dto.ForecastDay
 import ru.borodinskiy.aleksei.weather.util.load
-import java.text.SimpleDateFormat
-import java.util.Locale
+import ru.borodinskiy.aleksei.weather.utils.ReformatValues.reformatDate
 
 interface OnInteractionListener {
     fun onShowDetail()
@@ -36,12 +35,13 @@ class WeatherAdapter(
 //                val date = LocalDate.parse(forecastDay.date)
 //                val new = date.format(formatter)
 
-                val dateString = forecastDay.date
-                val dateObj = SimpleDateFormat("yyyy-MM-dd").parse(dateString)
-                val date = dateObj?.let { SimpleDateFormat("d  MMMM", Locale("ru")).format(it) }
+//                val dateString = forecastDay.date
+//                val dateObj = SimpleDateFormat("yyyy-MM-dd").parse(dateString)
+//                val date = dateObj?.let { SimpleDateFormat("d  MMMM", Locale("ru")).format(it) }
 
                 //Todo Температура выбрана максимальная, а не средняя
-                day.text = date
+//                day.text = date
+                day.text = reformatDate(forecastDay.date)
                 conditionText.text = forecastDay.day.condition.condition
                 temp.text = forecastDay.day.temperatureMax.toInt().toString() + " °C"
                 wind.text = forecastDay.day.wind.toInt().toString() + " км/ч"
