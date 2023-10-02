@@ -13,7 +13,7 @@
         <!-- Status bar color. -->
         <item name="android:statusBarColor">@color/PRIMARY_600</item>
         <!-- Navigation bar color. -->
-        <item name="android:navigationBarColor">@color/PRIMARY_600</item>
+        <item name="android:navigationBarColor">@color/PRIMARY_500</item>
     </style>
 
     <style name="Theme.Weather" parent="Base.Theme.Weather" />

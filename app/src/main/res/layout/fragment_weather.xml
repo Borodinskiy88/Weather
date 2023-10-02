@@ -49,13 +49,29 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/padding_12"
+        android:layout_margin="@dimen/padding_start_4"
         android:backgroundTint="@color/PRIMARY_500"
         app:cornerRadius="@dimen/padding_12"
         android:text="@string/choose_city"
         android:textColor="@color/black"
-        android:textSize="@dimen/text_size_20"
-        app:layout_constraintEnd_toEndOf="parent"
+        android:textSize="@dimen/text_size_14"
         app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/detail_button"
+        app:layout_constraintTop_toBottomOf="@id/head_temp" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/detail_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/padding_12"
+        android:layout_margin="@dimen/padding_start_4"
+        android:backgroundTint="@color/PRIMARY_500"
+        app:cornerRadius="@dimen/padding_12"
+        android:text="Прогноз на день"
+        android:textColor="@color/black"
+        android:textSize="@dimen/text_size_14"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/weather_button"
         app:layout_constraintTop_toBottomOf="@id/head_temp" />
 
     <androidx.recyclerview.widget.RecyclerView
