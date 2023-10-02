@@ -7,6 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.PopupMenu
 import androidx.core.content.ContextCompat
+import androidx.core.os.bundleOf
 import androidx.core.view.isVisible
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
@@ -49,6 +50,10 @@ class WeatherFragment : Fragment() {
         callCity("Moscow", "Москва", R.drawable.moscow)
         binding.weatherButton.isVisible = true
 
+//        binding.detailButton.setOnClickListener {
+//            findNavController().navigate(R.id.action_weatherFragment_to_dayFragment)
+//        }
+
         binding.weatherButton.setOnClickListener {
             recyclerView.isVisible = false
             PopupMenu(it.context, it).apply {
@@ -59,6 +64,13 @@ class WeatherFragment : Fragment() {
                             callCity("Moscow", "Москва", R.drawable.moscow)
                             //Прячем погоду
                             recyclerView.isVisible = true
+
+                            recyclerView.setOnClickListener {
+                                val bundle = bundleOf(
+                                    //   Pair("name")
+                                )
+                                findNavController().navigate(R.id.action_weatherFragment_to_dayFragment)
+                            }
                             true
                         }
 
@@ -166,6 +178,9 @@ class WeatherFragment : Fragment() {
     private fun setAdapterInRecycleView(forecastDay: List<ForecastDay>) {
         binding.recyclerView.adapter = WeatherAdapter(forecastDay, object : OnInteractionListener {
             override fun onShowDetail() {
+                val bundle = bundleOf(
+                    // Pair("", forecastDay[0].day.)
+                )
                 findNavController().navigate(R.id.action_weatherFragment_to_dayFragment)
             }
 

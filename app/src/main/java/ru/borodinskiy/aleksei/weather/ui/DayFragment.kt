@@ -43,6 +43,25 @@ class DayFragment : Fragment() {
         viewModel.getWeather("Moscow").observe(viewLifecycleOwner) {
             setAdapterInRecycleView(it.forecast.forecastDay[0].hour)
         }
+
+        binding.apply {
+            todayButton.setOnClickListener {
+                viewModel.getWeather("Moscow").observe(viewLifecycleOwner) {
+                    setAdapterInRecycleView(it.forecast.forecastDay[0].hour)
+                }
+            }
+            tomorrowButton.setOnClickListener {
+                viewModel.getWeather("Moscow").observe(viewLifecycleOwner) {
+                    setAdapterInRecycleView(it.forecast.forecastDay[1].hour)
+                }
+            }
+            afterTomorrowButton.setOnClickListener {
+                viewModel.getWeather("Moscow").observe(viewLifecycleOwner) {
+                    setAdapterInRecycleView(it.forecast.forecastDay[2].hour)
+                }
+            }
+        }
+
     }
 
     private fun setAdapterInRecycleView(hour: List<Hour>) {

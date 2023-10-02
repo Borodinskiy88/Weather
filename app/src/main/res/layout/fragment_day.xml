@@ -9,13 +9,13 @@
 
     <ImageView
         android:id="@+id/back"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@id/city"
-        app:layout_constraintBottom_toBottomOf="@id/city"
+        android:layout_width="36dp"
+        android:layout_height="36dp"
         android:layout_margin="@dimen/padding_start_8"
         android:src="@drawable/ic_back_24"
-        android:layout_width="36dp"
-        android:layout_height="36dp" />
+        app:layout_constraintBottom_toBottomOf="@id/city"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/city" />
 
     <TextView
         android:id="@+id/city"
@@ -42,6 +42,51 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/city" />
 
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/today_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/padding_start_8"
+        android:backgroundTint="@color/PRIMARY_500"
+        android:text="Сегодня"
+        android:textColor="@color/black"
+        android:textSize="15sp"
+        app:cornerRadius="@dimen/padding_12"
+        app:layout_constraintEnd_toStartOf="@id/tomorrow_button"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/date" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/tomorrow_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/padding_start_4"
+        android:layout_marginTop="@dimen/padding_start_8"
+        android:backgroundTint="@color/PRIMARY_500"
+        android:text="Завтра"
+        android:textColor="@color/black"
+        android:textSize="15sp"
+        app:cornerRadius="@dimen/padding_12"
+        app:layout_constraintEnd_toStartOf="@id/after_tomorrow_button"
+        app:layout_constraintStart_toEndOf="@id/today_button"
+        app:layout_constraintTop_toBottomOf="@id/date" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/after_tomorrow_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/padding_start_4"
+        android:layout_marginTop="@dimen/padding_start_8"
+        android:layout_marginBottom="@dimen/padding_start_8"
+        android:backgroundTint="@color/PRIMARY_500"
+        android:text="Послезавтра"
+        android:textColor="@color/black"
+        android:textSize="15sp"
+        app:cornerRadius="@dimen/padding_12"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/tomorrow_button"
+        app:layout_constraintTop_toBottomOf="@id/date" />
+
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recycler_view"
         android:layout_width="match_parent"
@@ -50,7 +95,7 @@
         android:layout_marginBottom="@dimen/padding_start_8"
         android:scrollbars="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/date"
+        app:layout_constraintTop_toBottomOf="@id/today_button"
         tools:itemCount="24"
         tools:listitem="@layout/card_day" />
 
