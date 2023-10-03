@@ -1,4 +1,4 @@
-<resources>
+<resources xmlns:tools="http://schemas.android.com/tools">
     <!-- Base application theme. -->
     <style name="Base.Theme.Weather" parent="Theme.MaterialComponents.DayNight.NoActionBar">
         <!-- Primary brand color. -->
@@ -14,6 +14,12 @@
         <item name="android:statusBarColor">@color/PRIMARY_600</item>
         <!-- Navigation bar color. -->
         <item name="android:navigationBarColor">@color/PRIMARY_500</item>
+        <!-- SplashScreen -->
+        <item name="android:windowSplashScreenBackground" tools:targetApi="s">@color/PRIMARY_5000
+        </item>
+        <item name="android:windowSplashScreenAnimatedIcon" tools:targetApi="s">
+            @drawable/ic_launcher_foreground
+        </item>
     </style>
 
     <style name="Theme.Weather" parent="Base.Theme.Weather" />

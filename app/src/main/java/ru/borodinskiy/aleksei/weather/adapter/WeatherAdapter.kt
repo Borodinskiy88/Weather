@@ -9,6 +9,7 @@ import ru.borodinskiy.aleksei.weather.databinding.CardWeatherBinding
 import ru.borodinskiy.aleksei.weather.dto.ForecastDay
 import ru.borodinskiy.aleksei.weather.util.load
 import ru.borodinskiy.aleksei.weather.utils.ReformatValues.reformatDate
+import ru.borodinskiy.aleksei.weather.utils.ReformatValues.reformatSpeedWind
 
 class WeatherAdapter(
     private val forecastDay: List<ForecastDay>,
@@ -24,11 +25,12 @@ class WeatherAdapter(
         fun bind(forecastDay: ForecastDay) {
             binding.apply {
 
-                //Todo Температура выбрана максимальная, а не средняя
                 day.text = reformatDate(forecastDay.date)
                 conditionText.text = forecastDay.day.condition.condition
                 temp.text = forecastDay.day.temperatureMax.toInt().toString() + " °C"
-                wind.text = forecastDay.day.wind.toInt().toString() + " км/ч"
+
+                val winds = forecastDay.day.wind.toInt()
+                wind.text = reformatSpeedWind(winds).toString() + " м/c"
                 humidity.text = forecastDay.day.humidity.toInt().toString() + " %"
                 conditionIcon.load(forecastDay.day.condition.icon)
 

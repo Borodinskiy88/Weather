@@ -10,8 +10,14 @@
         android:id="@+id/v_novgorod"
         android:title="@string/v_novgorod" />
     <item
+        android:id="@+id/vladivostok"
+        android:title="@string/vladivostok" />
+    <item
         android:id="@+id/vladimir"
         android:title="@string/vladimir" />
+    <item
+        android:id="@+id/dmitrov"
+        android:title="@string/dmitrov" />
     <item
         android:id="@+id/kazan"
         android:title="@string/kazan" />
@@ -19,14 +25,23 @@
         android:id="@+id/kaliningrad"
         android:title="@string/kaliningrad" />
     <item
+        android:id="@+id/klin"
+        android:title="@string/klin" />
+    <item
         android:id="@+id/n_novgorod"
         android:title="@string/n_novgorod" />
+    <item
+        android:id="@+id/ozery"
+        android:title="@string/ozery" />
     <item
         android:id="@+id/penza"
         android:title="@string/penza" />
     <item
         android:id="@+id/pereslavl_z"
         android:title="@string/pereslavl_z" />
+    <item
+        android:id="@+id/ryazan"
+        android:title="@string/ryazan" />
     <item
         android:id="@+id/samara"
         android:title="@string/samara" />

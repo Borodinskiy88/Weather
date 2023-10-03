@@ -22,4 +22,10 @@
     <string name="today">Сегодня</string>
     <string name="back">Назад</string>
     <string name="icon">Icon</string>
+    <string name="weather_for_day">Прогноз на день</string>
+    <string name="vladivostok">Владивосток</string>
+    <string name="dmitrov">Дмитров</string>
+    <string name="klin">Клин</string>
+    <string name="ozery">Озёры</string>
+    <string name="ryazan">Рязань</string>
 </resources>

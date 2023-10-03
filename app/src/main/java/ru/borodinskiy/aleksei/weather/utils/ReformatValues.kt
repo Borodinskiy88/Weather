@@ -20,4 +20,9 @@ object ReformatValues {
         val reformatDate = dateObj?.let { SimpleDateFormat("d  MMMM", Locale("ru")).format(it) }
         return reformatDate.toString()
     }
+
+    fun reformatSpeedWind(speed: Int): Int {
+        val ratio = 0.277778
+        return (speed * ratio).toInt()
+    }
 }

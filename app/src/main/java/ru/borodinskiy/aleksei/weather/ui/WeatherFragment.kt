@@ -51,41 +51,21 @@ class WeatherFragment : Fragment() {
         recyclerView = binding.recyclerView
         recyclerView.layoutManager = LinearLayoutManager(requireContext())
 
-        //TODO Если бандл не пустой, открывай город из Бандла, если пустой, то Москву
         val dayEng = arguments?.getString(DAY_ENG) ?: "Moscow"
         val dayRus = arguments?.getString(DAY_RUS) ?: "Москва"
         val dayBackground = arguments?.getInt(DAY_BACKGROUND) ?: R.drawable.moscow
 
         callCity(dayEng, dayRus, dayBackground)
-//        val dayEng = arguments?.getString(DAY_ENG).toString()
-//        val dayRus = arguments?.getString(DAY_RUS).toString()
-//        val dayBackground = arguments?.getInt(DAY_BACKGROUND)
-//
-//        if (dayEng.isNotEmpty() && dayRus.isNotEmpty() && dayBackground != null) {
-//            callCity(dayEng, dayRus, dayBackground)
-//            binding.weatherButton.isVisible = true
-//        } else {
-//            callCity("Moscow", "Москва", R.drawable.moscow)
-//            binding.weatherButton.isVisible = true
-//            binding.detailButton.setOnClickListener {
-//                val bundle = bundleOf(
-//                    Pair("nameEng", "Moscow"),
-//                    Pair("nameRus", "Москва"),
-//                    Pair("background", R.drawable.moscow)
-//                )
-//                findNavController().navigate(R.id.action_weatherFragment_to_dayFragment, bundle)
-//            }
-//        }
 
         binding.detailButton.setOnClickListener {
-            //           if (dayEng.isNotEmpty() && dayRus.isNotEmpty() && dayBackground != null) {
+
             val bundle = bundleOf(
                 Pair("nameEng", dayEng),
                 Pair("nameRus", dayRus),
                 Pair("background", dayBackground)
             )
             findNavController().navigate(R.id.action_weatherFragment_to_dayFragment, bundle)
-//            }
+
         }
 
         binding.weatherButton.setOnClickListener {
@@ -100,7 +80,7 @@ class WeatherFragment : Fragment() {
                             val background = R.drawable.moscow
 
                             callCity(nameEng, nameRus, background)
-                            //Прячем погоду
+
                             recyclerView.isVisible = true
 
                             binding.detailButton.setOnClickListener {
@@ -140,10 +120,40 @@ class WeatherFragment : Fragment() {
                             true
                         }
 
+                        R.id.vladivostok -> {
+                            val nameEng = "Vladivostok"
+                            val nameRus = "Владивосток"
+                            val background = R.drawable.vladivostok
+
+                            callCity(nameEng, nameRus, background)
+                            recyclerView.isVisible = true
+
+                            binding.detailButton.setOnClickListener {
+                                setBundle(nameEng, nameRus, background)
+                            }
+
+                            true
+                        }
+
                         R.id.vladimir -> {
                             val nameEng = "Vladimir"
                             val nameRus = "Владимир"
                             val background = R.drawable.vladimir
+
+                            callCity(nameEng, nameRus, background)
+                            recyclerView.isVisible = true
+
+                            binding.detailButton.setOnClickListener {
+                                setBundle(nameEng, nameRus, background)
+                            }
+
+                            true
+                        }
+
+                        R.id.dmitrov -> {
+                            val nameEng = "Dmitrov"
+                            val nameRus = "Дмитров"
+                            val background = R.drawable.dmitrov
 
                             callCity(nameEng, nameRus, background)
                             recyclerView.isVisible = true
@@ -185,10 +195,40 @@ class WeatherFragment : Fragment() {
                             true
                         }
 
+                        R.id.klin -> {
+                            val nameEng = "Klin"
+                            val nameRus = "Клин"
+                            val background = R.drawable.klin
+
+                            callCity(nameEng, nameRus, background)
+                            recyclerView.isVisible = true
+
+                            binding.detailButton.setOnClickListener {
+                                setBundle(nameEng, nameRus, background)
+                            }
+
+                            true
+                        }
+
                         R.id.n_novgorod -> {
                             val nameEng = "Nizhny Novgorod"
                             val nameRus = "Н.Новгород"
                             val background = R.drawable.nizny_novgorod
+
+                            callCity(nameEng, nameRus, background)
+                            recyclerView.isVisible = true
+
+                            binding.detailButton.setOnClickListener {
+                                setBundle(nameEng, nameRus, background)
+                            }
+
+                            true
+                        }
+
+                        R.id.ozery -> {
+                            val nameEng = "Ozery"
+                            val nameRus = "Озёры"
+                            val background = R.drawable.ozery
 
                             callCity(nameEng, nameRus, background)
                             recyclerView.isVisible = true
@@ -219,6 +259,21 @@ class WeatherFragment : Fragment() {
                             val nameEng = "Pereslavl-Zalessky"
                             val nameRus = "Переславль-З."
                             val background = R.drawable.pereslavl
+
+                            callCity(nameEng, nameRus, background)
+                            recyclerView.isVisible = true
+
+                            binding.detailButton.setOnClickListener {
+                                setBundle(nameEng, nameRus, background)
+                            }
+
+                            true
+                        }
+
+                        R.id.ryazan -> {
+                            val nameEng = "Ryazan"
+                            val nameRus = "Рязань"
+                            val background = R.drawable.ryazan
 
                             callCity(nameEng, nameRus, background)
                             recyclerView.isVisible = true

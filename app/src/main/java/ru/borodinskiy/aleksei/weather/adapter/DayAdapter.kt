@@ -20,20 +20,8 @@ class DayAdapter(private val hour: List<Hour>) :
         fun bind(hour: Hour) {
             binding.apply {
 
-
-//                val formatter = DateTimeFormatter.ofPattern("dd-MM")
-//                val date = LocalDate.parse(forecastDay.date)
-//                val new = date.format(formatter)
-
-//                val timeString = hour.time
-//                val timeObj = SimpleDateFormat("yyyy-MM-dd HH:mm").parse(timeString)
-//                val currentTime =
-//                    timeObj?.let { SimpleDateFormat("HH:mm", Locale("ru")).format(it) }
-
-//                time.text = currentTime
                 time.text = reformatTime(hour.time)
                 iconWeather.load(hour.condition.icon)
-//                temp.text = hour.tempHour.toInt().toString() + " °C"
 
                 val currentTemp = hour.tempHour.toInt()
                 temp.text = if (currentTemp > 0) {

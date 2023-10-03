@@ -67,7 +67,7 @@
         android:layout_margin="@dimen/padding_start_4"
         android:backgroundTint="@color/PRIMARY_500"
         app:cornerRadius="@dimen/padding_12"
-        android:text="Прогноз на день"
+        android:text="@string/weather_for_day"
         android:textColor="@color/black"
         android:textSize="@dimen/text_size_14"
         app:layout_constraintEnd_toEndOf="parent"
