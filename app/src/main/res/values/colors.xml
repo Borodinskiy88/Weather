@@ -9,5 +9,6 @@
     <color name="gray">#706F70</color>
     <color name="PRIMARY_500">#80D9FFFE</color>
     <color name="PRIMARY_5000">#D9FFFE</color>
+    <color name="black_light">#333232</color>
 </resources>
 
