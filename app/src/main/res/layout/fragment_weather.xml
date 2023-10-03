@@ -12,7 +12,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/common_spacing_16"
         android:textColor="@color/white"
-        android:textSize="@dimen/text_size_42"
+        android:textSize="@dimen/text_size_36"
         android:textStyle="bold"
         tools:text="Санкт-Петербург"
         app:layout_constraintEnd_toEndOf="parent"
