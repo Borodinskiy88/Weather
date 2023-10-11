@@ -7,6 +7,18 @@
         android:id="@+id/st_petersburg"
         android:title="@string/st_petersburg" />
     <item
+        android:id="@+id/anadyr"
+        android:title="@string/anadyr" />
+    <item
+        android:id="@+id/arkhangelsk"
+        android:title="@string/arkhangelsk" />
+    <item
+        android:id="@+id/blagoveshchensk"
+        android:title="@string/blagoveshchensk" />
+    <item
+        android:id="@+id/bryansk"
+        android:title="@string/bryansk" />
+    <item
         android:id="@+id/v_novgorod"
         android:title="@string/v_novgorod" />
     <item
@@ -16,8 +28,35 @@
         android:id="@+id/vladimir"
         android:title="@string/vladimir" />
     <item
+        android:id="@+id/volgograd"
+        android:title="@string/volgograd" />
+    <item
+        android:id="@+id/volokolamsk"
+        android:title="@string/volokolamsk" />
+    <item
+        android:id="@+id/voronezh"
+        android:title="@string/voronezh" />
+    <item
+        android:id="@+id/vyborg"
+        android:title="@string/vyborg" />
+    <item
         android:id="@+id/dmitrov"
         android:title="@string/dmitrov" />
+    <item
+        android:id="@+id/ekaterinburg"
+        android:title="@string/ekaterinburg" />
+    <item
+        android:id="@+id/zvenigorod"
+        android:title="@string/zvenigorod" />
+    <item
+        android:id="@+id/irkutsk"
+        android:title="@string/irkutsk" />
+    <item
+        android:id="@+id/yoshkar_ola"
+        android:title="@string/yoshkar_ola" />
+    <item
+        android:id="@+id/kaluga"
+        android:title="@string/kaluga" />
     <item
         android:id="@+id/kazan"
         android:title="@string/kazan" />
@@ -28,11 +67,35 @@
         android:id="@+id/klin"
         android:title="@string/klin" />
     <item
+        android:id="@+id/kolomna"
+        android:title="@string/kolomna" />
+    <item
+        android:id="@+id/krasnodar"
+        android:title="@string/krasnodar" />
+    <item
+        android:id="@+id/krasnoyarsk"
+        android:title="@string/krasnoyarsk" />
+    <item
+        android:id="@+id/lipetsk"
+        android:title="@string/lipetsk" />
+    <item
+        android:id="@+id/magadan"
+        android:title="@string/magadan" />
+    <item
+        android:id="@+id/murmansk"
+        android:title="@string/murmansk" />
+    <item
         android:id="@+id/n_novgorod"
         android:title="@string/n_novgorod" />
     <item
+        android:id="@+id/novorossiysk"
+        android:title="@string/novorossiysk" />
+    <item
         android:id="@+id/ozery"
         android:title="@string/ozery" />
+    <item
+        android:id="@+id/orel"
+        android:title="@string/orel" />
     <item
         android:id="@+id/penza"
         android:title="@string/penza" />
@@ -40,23 +103,80 @@
         android:id="@+id/pereslavl_z"
         android:title="@string/pereslavl_z" />
     <item
+        android:id="@+id/perm"
+        android:title="@string/perm" />
+    <item
+        android:id="@+id/petropavlovsk_kamchatsky"
+        android:title="@string/petropavlovsk_k" />
+    <item
+        android:id="@+id/petrozavodsk"
+        android:title="@string/petrozavodsk" />
+    <item
+        android:id="@+id/pskov"
+        android:title="@string/Pskov" />
+    <item
+        android:id="@+id/pyatigorsk"
+        android:title="@string/pyatigorsk" />
+    <item
+        android:id="@+id/rzhev"
+        android:title="@string/Rzhev" />
+    <item
+        android:id="@+id/rostov_on_don"
+        android:title="@string/rostov_on_don" />
+    <item
         android:id="@+id/ryazan"
         android:title="@string/ryazan" />
     <item
         android:id="@+id/samara"
         android:title="@string/samara" />
     <item
+        android:id="@+id/saransk"
+        android:title="@string/saransk" />
+    <item
+        android:id="@+id/saratov"
+        android:title="@string/saratov" />
+    <item
         android:id="@+id/s_posad"
         android:title="@string/s_posad" />
+    <item
+        android:id="@+id/smolensk"
+        android:title="@string/smolensk" />
+    <item
+        android:id="@+id/sochi"
+        android:title="@string/sochi" />
+    <item
+        android:id="@+id/stavropol"
+        android:title="@string/stavropol" />
     <item
         android:id="@+id/suzdal"
         android:title="@string/suzdal" />
     <item
+        android:id="@+id/syzran"
+        android:title="@string/syzran" />
+    <item
+        android:id="@+id/tver"
+        android:title="@string/tver" />
+    <item
+        android:id="@+id/tobolsk"
+        android:title="@string/tobolsk" />
+    <item
         android:id="@+id/tula"
         android:title="@string/tula" />
     <item
+        android:id="@+id/ulan_ude"
+        android:title="@string/ulan_ude" />
+    <item
+        android:id="@+id/ufa"
+        android:title="@string/ufa" />
+    <item
         android:id="@+id/cheboksary"
         android:title="@string/cheboksary" />
+    <item
+        android:id="@+id/chelyabinsk"
+        android:title="@string/chelyabinsk" />
+    <item
+        android:id="@+id/elista"
+        android:title="@string/elista" />
     <item
         android:id="@+id/yaroslavl"
         android:title="@string/yaroslavl" />
