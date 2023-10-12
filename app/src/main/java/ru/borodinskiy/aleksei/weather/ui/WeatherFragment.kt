@@ -602,7 +602,7 @@ class WeatherFragment : Fragment() {
 
                         R.id.petropavlovsk_kamchatsky -> {
                             val nameEng = "Petropavlovsk-Kamchatsky"
-                            val nameRus = "Петропавловск-Кам."
+                            val nameRus = "Петропавловск-К."
                             val background = R.drawable.petropavlovsk_k
 
                             callCity(nameEng, nameRus, background)
@@ -814,6 +814,21 @@ class WeatherFragment : Fragment() {
                             val nameEng = "Suzdal"
                             val nameRus = "Суздаль"
                             val background = R.drawable.suzdal
+
+                            callCity(nameEng, nameRus, background)
+                            recyclerView.isVisible = true
+
+                            binding.detailButton.setOnClickListener {
+                                setBundle(nameEng, nameRus, background)
+                            }
+
+                            true
+                        }
+
+                        R.id.syzran -> {
+                            val nameEng = "Syzran"
+                            val nameRus = "Сызрань"
+                            val background = R.drawable.syzran
 
                             callCity(nameEng, nameRus, background)
                             recyclerView.isVisible = true
