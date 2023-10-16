@@ -57,6 +57,16 @@ class WeatherFragment : Fragment() {
 
         callCity(dayEng, dayRus, dayBackground)
 
+        binding.showPhoto.setOnClickListener {
+
+            val bundle = bundleOf(
+                Pair("nameEng", dayEng),
+                Pair("nameRus", dayRus),
+                Pair("background", dayBackground)
+            )
+            findNavController().navigate(R.id.action_weatherFragment_to_photoFragment, bundle)
+        }
+
         binding.detailButton.setOnClickListener {
 
             val bundle = bundleOf(
@@ -87,6 +97,10 @@ class WeatherFragment : Fragment() {
                                 setBundle(nameEng, nameRus, background)
                             }
 
+                            binding.showPhoto.setOnClickListener {
+                                setBundleToPhoto(nameEng, nameRus, background)
+                            }
+
                             true
                         }
 
@@ -100,6 +114,10 @@ class WeatherFragment : Fragment() {
 
                             binding.detailButton.setOnClickListener {
                                 setBundle(nameEng, nameRus, background)
+                            }
+
+                            binding.showPhoto.setOnClickListener {
+                                setBundleToPhoto(nameEng, nameRus, background)
                             }
 
                             true
@@ -117,6 +135,10 @@ class WeatherFragment : Fragment() {
                                 setBundle(nameEng, nameRus, background)
                             }
 
+                            binding.showPhoto.setOnClickListener {
+                                setBundleToPhoto(nameEng, nameRus, background)
+                            }
+
                             true
                         }
 
@@ -130,6 +152,10 @@ class WeatherFragment : Fragment() {
 
                             binding.detailButton.setOnClickListener {
                                 setBundle(nameEng, nameRus, background)
+                            }
+
+                            binding.showPhoto.setOnClickListener {
+                                setBundleToPhoto(nameEng, nameRus, background)
                             }
 
                             true
@@ -147,6 +173,10 @@ class WeatherFragment : Fragment() {
                                 setBundle(nameEng, nameRus, background)
                             }
 
+                            binding.showPhoto.setOnClickListener {
+                                setBundleToPhoto(nameEng, nameRus, background)
+                            }
+
                             true
                         }
 
@@ -160,6 +190,10 @@ class WeatherFragment : Fragment() {
 
                             binding.detailButton.setOnClickListener {
                                 setBundle(nameEng, nameRus, background)
+                            }
+
+                            binding.showPhoto.setOnClickListener {
+                                setBundleToPhoto(nameEng, nameRus, background)
                             }
 
                             true
@@ -177,6 +211,10 @@ class WeatherFragment : Fragment() {
                                 setBundle(nameEng, nameRus, background)
                             }
 
+                            binding.showPhoto.setOnClickListener {
+                                setBundleToPhoto(nameEng, nameRus, background)
+                            }
+
                             true
                         }
 
@@ -190,6 +228,10 @@ class WeatherFragment : Fragment() {
 
                             binding.detailButton.setOnClickListener {
                                 setBundle(nameEng, nameRus, background)
+                            }
+
+                            binding.showPhoto.setOnClickListener {
+                                setBundleToPhoto(nameEng, nameRus, background)
                             }
 
                             true
@@ -207,6 +249,10 @@ class WeatherFragment : Fragment() {
                                 setBundle(nameEng, nameRus, background)
                             }
 
+                            binding.showPhoto.setOnClickListener {
+                                setBundleToPhoto(nameEng, nameRus, background)
+                            }
+
                             true
                         }
 
@@ -220,6 +266,10 @@ class WeatherFragment : Fragment() {
 
                             binding.detailButton.setOnClickListener {
                                 setBundle(nameEng, nameRus, background)
+                            }
+
+                            binding.showPhoto.setOnClickListener {
+                                setBundleToPhoto(nameEng, nameRus, background)
                             }
 
                             true
@@ -237,6 +287,10 @@ class WeatherFragment : Fragment() {
                                 setBundle(nameEng, nameRus, background)
                             }
 
+                            binding.showPhoto.setOnClickListener {
+                                setBundleToPhoto(nameEng, nameRus, background)
+                            }
+
                             true
                         }
 
@@ -250,6 +304,10 @@ class WeatherFragment : Fragment() {
 
                             binding.detailButton.setOnClickListener {
                                 setBundle(nameEng, nameRus, background)
+                            }
+
+                            binding.showPhoto.setOnClickListener {
+                                setBundleToPhoto(nameEng, nameRus, background)
                             }
 
                             true
@@ -267,6 +325,10 @@ class WeatherFragment : Fragment() {
                                 setBundle(nameEng, nameRus, background)
                             }
 
+                            binding.showPhoto.setOnClickListener {
+                                setBundleToPhoto(nameEng, nameRus, background)
+                            }
+
                             true
                         }
 
@@ -280,6 +342,10 @@ class WeatherFragment : Fragment() {
 
                             binding.detailButton.setOnClickListener {
                                 setBundle(nameEng, nameRus, background)
+                            }
+
+                            binding.showPhoto.setOnClickListener {
+                                setBundleToPhoto(nameEng, nameRus, background)
                             }
 
                             true
@@ -297,6 +363,10 @@ class WeatherFragment : Fragment() {
                                 setBundle(nameEng, nameRus, background)
                             }
 
+                            binding.showPhoto.setOnClickListener {
+                                setBundleToPhoto(nameEng, nameRus, background)
+                            }
+
                             true
                         }
 
@@ -310,6 +380,10 @@ class WeatherFragment : Fragment() {
 
                             binding.detailButton.setOnClickListener {
                                 setBundle(nameEng, nameRus, background)
+                            }
+
+                            binding.showPhoto.setOnClickListener {
+                                setBundleToPhoto(nameEng, nameRus, background)
                             }
 
                             true
@@ -327,6 +401,10 @@ class WeatherFragment : Fragment() {
                                 setBundle(nameEng, nameRus, background)
                             }
 
+                            binding.showPhoto.setOnClickListener {
+                                setBundleToPhoto(nameEng, nameRus, background)
+                            }
+
                             true
                         }
 
@@ -340,6 +418,10 @@ class WeatherFragment : Fragment() {
 
                             binding.detailButton.setOnClickListener {
                                 setBundle(nameEng, nameRus, background)
+                            }
+
+                            binding.showPhoto.setOnClickListener {
+                                setBundleToPhoto(nameEng, nameRus, background)
                             }
 
                             true
@@ -357,6 +439,10 @@ class WeatherFragment : Fragment() {
                                 setBundle(nameEng, nameRus, background)
                             }
 
+                            binding.showPhoto.setOnClickListener {
+                                setBundleToPhoto(nameEng, nameRus, background)
+                            }
+
                             true
                         }
 
@@ -370,6 +456,10 @@ class WeatherFragment : Fragment() {
 
                             binding.detailButton.setOnClickListener {
                                 setBundle(nameEng, nameRus, background)
+                            }
+
+                            binding.showPhoto.setOnClickListener {
+                                setBundleToPhoto(nameEng, nameRus, background)
                             }
 
                             true
@@ -387,6 +477,10 @@ class WeatherFragment : Fragment() {
                                 setBundle(nameEng, nameRus, background)
                             }
 
+                            binding.showPhoto.setOnClickListener {
+                                setBundleToPhoto(nameEng, nameRus, background)
+                            }
+
                             true
                         }
 
@@ -400,6 +494,10 @@ class WeatherFragment : Fragment() {
 
                             binding.detailButton.setOnClickListener {
                                 setBundle(nameEng, nameRus, background)
+                            }
+
+                            binding.showPhoto.setOnClickListener {
+                                setBundleToPhoto(nameEng, nameRus, background)
                             }
 
                             true
@@ -417,6 +515,10 @@ class WeatherFragment : Fragment() {
                                 setBundle(nameEng, nameRus, background)
                             }
 
+                            binding.showPhoto.setOnClickListener {
+                                setBundleToPhoto(nameEng, nameRus, background)
+                            }
+
                             true
                         }
 
@@ -430,6 +532,10 @@ class WeatherFragment : Fragment() {
 
                             binding.detailButton.setOnClickListener {
                                 setBundle(nameEng, nameRus, background)
+                            }
+
+                            binding.showPhoto.setOnClickListener {
+                                setBundleToPhoto(nameEng, nameRus, background)
                             }
 
                             true
@@ -447,6 +553,10 @@ class WeatherFragment : Fragment() {
                                 setBundle(nameEng, nameRus, background)
                             }
 
+                            binding.showPhoto.setOnClickListener {
+                                setBundleToPhoto(nameEng, nameRus, background)
+                            }
+
                             true
                         }
 
@@ -460,6 +570,10 @@ class WeatherFragment : Fragment() {
 
                             binding.detailButton.setOnClickListener {
                                 setBundle(nameEng, nameRus, background)
+                            }
+
+                            binding.showPhoto.setOnClickListener {
+                                setBundleToPhoto(nameEng, nameRus, background)
                             }
 
                             true
@@ -477,6 +591,10 @@ class WeatherFragment : Fragment() {
                                 setBundle(nameEng, nameRus, background)
                             }
 
+                            binding.showPhoto.setOnClickListener {
+                                setBundleToPhoto(nameEng, nameRus, background)
+                            }
+
                             true
                         }
 
@@ -490,6 +608,10 @@ class WeatherFragment : Fragment() {
 
                             binding.detailButton.setOnClickListener {
                                 setBundle(nameEng, nameRus, background)
+                            }
+
+                            binding.showPhoto.setOnClickListener {
+                                setBundleToPhoto(nameEng, nameRus, background)
                             }
 
                             true
@@ -507,6 +629,10 @@ class WeatherFragment : Fragment() {
                                 setBundle(nameEng, nameRus, background)
                             }
 
+                            binding.showPhoto.setOnClickListener {
+                                setBundleToPhoto(nameEng, nameRus, background)
+                            }
+
                             true
                         }
 
@@ -520,6 +646,10 @@ class WeatherFragment : Fragment() {
 
                             binding.detailButton.setOnClickListener {
                                 setBundle(nameEng, nameRus, background)
+                            }
+
+                            binding.showPhoto.setOnClickListener {
+                                setBundleToPhoto(nameEng, nameRus, background)
                             }
 
                             true
@@ -537,6 +667,10 @@ class WeatherFragment : Fragment() {
                                 setBundle(nameEng, nameRus, background)
                             }
 
+                            binding.showPhoto.setOnClickListener {
+                                setBundleToPhoto(nameEng, nameRus, background)
+                            }
+
                             true
                         }
 
@@ -550,6 +684,10 @@ class WeatherFragment : Fragment() {
 
                             binding.detailButton.setOnClickListener {
                                 setBundle(nameEng, nameRus, background)
+                            }
+
+                            binding.showPhoto.setOnClickListener {
+                                setBundleToPhoto(nameEng, nameRus, background)
                             }
 
                             true
@@ -567,6 +705,10 @@ class WeatherFragment : Fragment() {
                                 setBundle(nameEng, nameRus, background)
                             }
 
+                            binding.showPhoto.setOnClickListener {
+                                setBundleToPhoto(nameEng, nameRus, background)
+                            }
+
                             true
                         }
 
@@ -580,6 +722,10 @@ class WeatherFragment : Fragment() {
 
                             binding.detailButton.setOnClickListener {
                                 setBundle(nameEng, nameRus, background)
+                            }
+
+                            binding.showPhoto.setOnClickListener {
+                                setBundleToPhoto(nameEng, nameRus, background)
                             }
 
                             true
@@ -597,6 +743,10 @@ class WeatherFragment : Fragment() {
                                 setBundle(nameEng, nameRus, background)
                             }
 
+                            binding.showPhoto.setOnClickListener {
+                                setBundleToPhoto(nameEng, nameRus, background)
+                            }
+
                             true
                         }
 
@@ -610,6 +760,10 @@ class WeatherFragment : Fragment() {
 
                             binding.detailButton.setOnClickListener {
                                 setBundle(nameEng, nameRus, background)
+                            }
+
+                            binding.showPhoto.setOnClickListener {
+                                setBundleToPhoto(nameEng, nameRus, background)
                             }
 
                             true
@@ -627,6 +781,10 @@ class WeatherFragment : Fragment() {
                                 setBundle(nameEng, nameRus, background)
                             }
 
+                            binding.showPhoto.setOnClickListener {
+                                setBundleToPhoto(nameEng, nameRus, background)
+                            }
+
                             true
                         }
 
@@ -640,6 +798,10 @@ class WeatherFragment : Fragment() {
 
                             binding.detailButton.setOnClickListener {
                                 setBundle(nameEng, nameRus, background)
+                            }
+
+                            binding.showPhoto.setOnClickListener {
+                                setBundleToPhoto(nameEng, nameRus, background)
                             }
 
                             true
@@ -657,6 +819,10 @@ class WeatherFragment : Fragment() {
                                 setBundle(nameEng, nameRus, background)
                             }
 
+                            binding.showPhoto.setOnClickListener {
+                                setBundleToPhoto(nameEng, nameRus, background)
+                            }
+
                             true
                         }
 
@@ -670,6 +836,10 @@ class WeatherFragment : Fragment() {
 
                             binding.detailButton.setOnClickListener {
                                 setBundle(nameEng, nameRus, background)
+                            }
+
+                            binding.showPhoto.setOnClickListener {
+                                setBundleToPhoto(nameEng, nameRus, background)
                             }
 
                             true
@@ -687,6 +857,10 @@ class WeatherFragment : Fragment() {
                                 setBundle(nameEng, nameRus, background)
                             }
 
+                            binding.showPhoto.setOnClickListener {
+                                setBundleToPhoto(nameEng, nameRus, background)
+                            }
+
                             true
                         }
 
@@ -700,6 +874,10 @@ class WeatherFragment : Fragment() {
 
                             binding.detailButton.setOnClickListener {
                                 setBundle(nameEng, nameRus, background)
+                            }
+
+                            binding.showPhoto.setOnClickListener {
+                                setBundleToPhoto(nameEng, nameRus, background)
                             }
 
                             true
@@ -717,6 +895,10 @@ class WeatherFragment : Fragment() {
                                 setBundle(nameEng, nameRus, background)
                             }
 
+                            binding.showPhoto.setOnClickListener {
+                                setBundleToPhoto(nameEng, nameRus, background)
+                            }
+
                             true
                         }
 
@@ -730,6 +912,10 @@ class WeatherFragment : Fragment() {
 
                             binding.detailButton.setOnClickListener {
                                 setBundle(nameEng, nameRus, background)
+                            }
+
+                            binding.showPhoto.setOnClickListener {
+                                setBundleToPhoto(nameEng, nameRus, background)
                             }
 
                             true
@@ -747,6 +933,10 @@ class WeatherFragment : Fragment() {
                                 setBundle(nameEng, nameRus, background)
                             }
 
+                            binding.showPhoto.setOnClickListener {
+                                setBundleToPhoto(nameEng, nameRus, background)
+                            }
+
                             true
                         }
 
@@ -760,6 +950,10 @@ class WeatherFragment : Fragment() {
 
                             binding.detailButton.setOnClickListener {
                                 setBundle(nameEng, nameRus, background)
+                            }
+
+                            binding.showPhoto.setOnClickListener {
+                                setBundleToPhoto(nameEng, nameRus, background)
                             }
 
                             true
@@ -777,6 +971,10 @@ class WeatherFragment : Fragment() {
                                 setBundle(nameEng, nameRus, background)
                             }
 
+                            binding.showPhoto.setOnClickListener {
+                                setBundleToPhoto(nameEng, nameRus, background)
+                            }
+
                             true
                         }
 
@@ -790,6 +988,10 @@ class WeatherFragment : Fragment() {
 
                             binding.detailButton.setOnClickListener {
                                 setBundle(nameEng, nameRus, background)
+                            }
+
+                            binding.showPhoto.setOnClickListener {
+                                setBundleToPhoto(nameEng, nameRus, background)
                             }
 
                             true
@@ -807,6 +1009,10 @@ class WeatherFragment : Fragment() {
                                 setBundle(nameEng, nameRus, background)
                             }
 
+                            binding.showPhoto.setOnClickListener {
+                                setBundleToPhoto(nameEng, nameRus, background)
+                            }
+
                             true
                         }
 
@@ -820,6 +1026,10 @@ class WeatherFragment : Fragment() {
 
                             binding.detailButton.setOnClickListener {
                                 setBundle(nameEng, nameRus, background)
+                            }
+
+                            binding.showPhoto.setOnClickListener {
+                                setBundleToPhoto(nameEng, nameRus, background)
                             }
 
                             true
@@ -837,6 +1047,10 @@ class WeatherFragment : Fragment() {
                                 setBundle(nameEng, nameRus, background)
                             }
 
+                            binding.showPhoto.setOnClickListener {
+                                setBundleToPhoto(nameEng, nameRus, background)
+                            }
+
                             true
                         }
 
@@ -850,6 +1064,10 @@ class WeatherFragment : Fragment() {
 
                             binding.detailButton.setOnClickListener {
                                 setBundle(nameEng, nameRus, background)
+                            }
+
+                            binding.showPhoto.setOnClickListener {
+                                setBundleToPhoto(nameEng, nameRus, background)
                             }
 
                             true
@@ -867,6 +1085,10 @@ class WeatherFragment : Fragment() {
                                 setBundle(nameEng, nameRus, background)
                             }
 
+                            binding.showPhoto.setOnClickListener {
+                                setBundleToPhoto(nameEng, nameRus, background)
+                            }
+
                             true
                         }
 
@@ -880,6 +1102,10 @@ class WeatherFragment : Fragment() {
 
                             binding.detailButton.setOnClickListener {
                                 setBundle(nameEng, nameRus, background)
+                            }
+
+                            binding.showPhoto.setOnClickListener {
+                                setBundleToPhoto(nameEng, nameRus, background)
                             }
 
                             true
@@ -897,6 +1123,10 @@ class WeatherFragment : Fragment() {
                                 setBundle(nameEng, nameRus, background)
                             }
 
+                            binding.showPhoto.setOnClickListener {
+                                setBundleToPhoto(nameEng, nameRus, background)
+                            }
+
                             true
                         }
 
@@ -910,6 +1140,10 @@ class WeatherFragment : Fragment() {
 
                             binding.detailButton.setOnClickListener {
                                 setBundle(nameEng, nameRus, background)
+                            }
+
+                            binding.showPhoto.setOnClickListener {
+                                setBundleToPhoto(nameEng, nameRus, background)
                             }
 
                             true
@@ -927,6 +1161,10 @@ class WeatherFragment : Fragment() {
                                 setBundle(nameEng, nameRus, background)
                             }
 
+                            binding.showPhoto.setOnClickListener {
+                                setBundleToPhoto(nameEng, nameRus, background)
+                            }
+
                             true
                         }
 
@@ -940,6 +1178,10 @@ class WeatherFragment : Fragment() {
 
                             binding.detailButton.setOnClickListener {
                                 setBundle(nameEng, nameRus, background)
+                            }
+
+                            binding.showPhoto.setOnClickListener {
+                                setBundleToPhoto(nameEng, nameRus, background)
                             }
 
                             true
@@ -957,6 +1199,10 @@ class WeatherFragment : Fragment() {
                                 setBundle(nameEng, nameRus, background)
                             }
 
+                            binding.showPhoto.setOnClickListener {
+                                setBundleToPhoto(nameEng, nameRus, background)
+                            }
+
                             true
                         }
 
@@ -970,6 +1216,10 @@ class WeatherFragment : Fragment() {
 
                             binding.detailButton.setOnClickListener {
                                 setBundle(nameEng, nameRus, background)
+                            }
+
+                            binding.showPhoto.setOnClickListener {
+                                setBundleToPhoto(nameEng, nameRus, background)
                             }
 
                             true
@@ -1019,6 +1269,16 @@ class WeatherFragment : Fragment() {
             Pair("background", background)
         )
         findNavController().navigate(R.id.action_weatherFragment_to_dayFragment, bundle)
+    }
+
+    private fun setBundleToPhoto(nameEng: String, nameRus: String, background: Int) {
+
+        val bundle = bundleOf(
+            Pair("nameEng", nameEng),
+            Pair("nameRus", nameRus),
+            Pair("background", background)
+        )
+        findNavController().navigate(R.id.action_weatherFragment_to_photoFragment, bundle)
     }
 
 }

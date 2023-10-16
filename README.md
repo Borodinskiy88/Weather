@@ -11,9 +11,10 @@
 
 <img src="screen/cities.png" width="25%" height="25%">      <img src="screen/moscow.png" width="25%" height="25%">    
 
-- фон, уникальный для каждого города, почасовой прогноз на три дня
+- фон, уникальный для каждого города, почасовой прогноз на три дня, возможность по клику посмотреть
+  только фотографию города
 
-<img src="screen/yaroslavl.png" width="25%" height="25%">      <img src="screen/detail.png" width="25%" height="25%">
+<img src="screen/yaroslavl.png" width="25%" height="25%">      <img src="screen/detail.png" width="25%" height="25%">      <img src="screen/petropavlovsk.png" width="25%" height="25%">
 
 - Использован открытый API https://www.weatherapi.com
 - Библиотеки:

@@ -13,6 +13,9 @@
         <action
             android:id="@+id/action_weatherFragment_to_dayFragment"
             app:destination="@id/dayFragment" />
+        <action
+            android:id="@+id/action_weatherFragment_to_photoFragment"
+            app:destination="@id/photoFragment" />
     </fragment>
     <fragment
         android:id="@+id/dayFragment"
@@ -21,6 +24,15 @@
         tools:layout="@layout/fragment_day">
         <action
             android:id="@+id/action_dayFragment_to_weatherFragment"
+            app:destination="@id/weatherFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/photoFragment"
+        android:name="ru.borodinskiy.aleksei.weather.ui.PhotoFragment"
+        android:label="PhotoFragment"
+        tools:layout="@layout/fragment_photo">
+        <action
+            android:id="@+id/action_photoFragment_to_weatherFragment"
             app:destination="@id/weatherFragment" />
     </fragment>
 </navigation>
