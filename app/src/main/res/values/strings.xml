@@ -69,4 +69,7 @@
     <string name="yoshkar_ola">Йошкар-Ола</string>
     <string name="zvenigorod">Звенигород</string>
     <string name="show_photo"><u>Показать только фото</u></string>
+    <string name="ivanovo">Иваново</string>
+    <string name="kostroma">Кострома</string>
+    <string name="rostov_v">Ростов Великий</string>
 </resources>

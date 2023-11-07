@@ -49,6 +49,9 @@
         android:id="@+id/zvenigorod"
         android:title="@string/zvenigorod" />
     <item
+        android:id="@+id/ivanovo"
+        android:title="@string/ivanovo" />
+    <item
         android:id="@+id/irkutsk"
         android:title="@string/irkutsk" />
     <item
@@ -69,6 +72,9 @@
     <item
         android:id="@+id/kolomna"
         android:title="@string/kolomna" />
+    <item
+        android:id="@+id/kostroma"
+        android:title="@string/kostroma" />
     <item
         android:id="@+id/krasnodar"
         android:title="@string/krasnodar" />
@@ -120,6 +126,9 @@
     <item
         android:id="@+id/rzhev"
         android:title="@string/Rzhev" />
+    <item
+        android:id="@+id/rostov_v"
+        android:title="@string/rostov_v" />
     <item
         android:id="@+id/rostov_on_don"
         android:title="@string/rostov_on_don" />

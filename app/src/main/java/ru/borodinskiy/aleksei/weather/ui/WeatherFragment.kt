@@ -389,6 +389,25 @@ class WeatherFragment : Fragment() {
                             true
                         }
 
+                        R.id.ivanovo -> {
+                            val nameEng = "Ivanovo"
+                            val nameRus = "Иваново"
+                            val background = R.drawable.ivanovo
+
+                            callCity(nameEng, nameRus, background)
+                            recyclerView.isVisible = true
+
+                            binding.detailButton.setOnClickListener {
+                                setBundle(nameEng, nameRus, background)
+                            }
+
+                            binding.showPhoto.setOnClickListener {
+                                setBundleToPhoto(nameEng, nameRus, background)
+                            }
+
+                            true
+                        }
+
                         R.id.irkutsk -> {
                             val nameEng = "Irkutsk"
                             val nameRus = "Иркутск"
@@ -507,6 +526,25 @@ class WeatherFragment : Fragment() {
                             val nameEng = "Kolomna"
                             val nameRus = "Коломна"
                             val background = R.drawable.kolomna
+
+                            callCity(nameEng, nameRus, background)
+                            recyclerView.isVisible = true
+
+                            binding.detailButton.setOnClickListener {
+                                setBundle(nameEng, nameRus, background)
+                            }
+
+                            binding.showPhoto.setOnClickListener {
+                                setBundleToPhoto(nameEng, nameRus, background)
+                            }
+
+                            true
+                        }
+
+                        R.id.kostroma -> {
+                            val nameEng = "Kostroma"
+                            val nameRus = "Кострома"
+                            val background = R.drawable.kostroma
 
                             callCity(nameEng, nameRus, background)
                             recyclerView.isVisible = true
@@ -830,6 +868,25 @@ class WeatherFragment : Fragment() {
                             val nameEng = "Rzhev"
                             val nameRus = "Ржев"
                             val background = R.drawable.rzhev
+
+                            callCity(nameEng, nameRus, background)
+                            recyclerView.isVisible = true
+
+                            binding.detailButton.setOnClickListener {
+                                setBundle(nameEng, nameRus, background)
+                            }
+
+                            binding.showPhoto.setOnClickListener {
+                                setBundleToPhoto(nameEng, nameRus, background)
+                            }
+
+                            true
+                        }
+
+                        R.id.rostov_v -> {
+                            val nameEng = "Rostov"
+                            val nameRus = "Ростов Великий"
+                            val background = R.drawable.rostov_velikiy
 
                             callCity(nameEng, nameRus, background)
                             recyclerView.isVisible = true
